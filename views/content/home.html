@@ -51,36 +51,38 @@
               <label>What is it that you require? If it’s a mobile app or social media, please share specific requirements.</label>
               <div class="magic-form">
                 <div class="magic-resize">
-                  <input class="magic-checkbox" type="checkbox" id="app">
+                  <input class="magic-checkbox" type="checkbox" name="requirement"  value="mobileApp" ng-model="formData.requirement.mobileApp" id="app">
                   <label class="text" for="app">
                                 Mobile App
                             </label>
                 </div>
                 <div class="magic-resize">
-                  <input class="magic-checkbox" type="checkbox" id="Media">
+                  <input class="magic-checkbox" type="checkbox"  name="requirement"  value="mediaInt" ng-model="formData.requirement.mediaInt" id="Media">
                   <label class="text" for="Media">
                                Social Medial Integration
                             </label>
                 </div>
                 <div class="magic-resize">
-                  <input class="magic-checkbox" type="checkbox" id="design">
+                  <input class="magic-checkbox" type="checkbox" name="requirement"  value="websitedesign" ng-model="formData.requirement.websitedesign" id="design">
                   <label class="text" for="design">
                               Website Design
                             </label>
                 </div>
                 <div class="magic-resize">
-                  <input class="magic-checkbox" type="checkbox" id="coding">
+                  <input class="magic-checkbox" type="checkbox" name="requirement"  value="websitecoding" ng-model="formData.requirement.websitecoding" id="coding">
                   <label class="text" for="coding">
                                 Website Coding
                             </label>
                 </div>
                 <div class="magic-resize">
-                  <input class="magic-checkbox" type="checkbox" id="coding">
-                  <label class="labewidtxt">
+                  <input class="magic-checkbox" name="myother" type="checkbox" value="others" id="other">
+                  <label class="labewidtxt" for="other">
                                Other:
                             </label>
-                </div>
+
               </div>
+              <input ng-model="formData.myother" type="text" class="form-control textbox-other" placeholder="Please mention other" ng-if="formData.myother.others">
+</div>
             </div>
           </div>
 
@@ -92,14 +94,14 @@
               <label>Do you need a website that can work smoothly on mobile devices like Samsung Galaxy (Android) and the iPhone (iOS)? This means the site has to be a ‘Responsive Design’ which adjusts dynamically to various screen sizes and resolutions.</label>
               <div class="magic-form">
                 <div class="magic-resize">
-                  <input class="magic-radio" type="radio" name="demonstration" id="yess" value="true" ng-model="formData.demonstration">
-                  <label class="text" for="yess">
+                  <input class="magic-radio" type="radio" name="demonstration" id="yes" value="true" ng-model="formData.demonstration">
+                  <label class="text" for="yes">
                         Yes
                      </label>
                 </div>
                 <div class="magic-resize">
-                  <input class="magic-radio" type="radio" name="demonstration" id="noo" value="false" ng-model="formData.demonstration">
-                  <label class="text" for="noo">
+                  <input class="magic-radio" type="radio" name="demonstration" id="no" value="false" ng-model="formData.demonstration">
+                  <label class="text" for="no">
                         No
                      </label>
                 </div>
@@ -711,7 +713,7 @@ Your answer
         </div>
         <div class="row">
           <div class="col-md-12">
-            <label>Would you like a more “corporate” (template based) site such as avasara.in or a more experimental site where almost all pages have a different feel, such as wrap.co.in?</label>
+            <label>Would you like a more “corporate” (template based) site such as <a href="">avasara.in</a> or a more experimental site where almost all pages have a different feel, such as <a href="">wrap.co.in</a>?</label>
             <div class="magic-form">
               <div class="magic-resize">
                 <input class="magic-radio" type="radio" name="sitetype" id=" Corporate" value="true" ng-model="formData.sitetype">

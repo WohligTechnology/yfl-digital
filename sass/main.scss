@@ -527,6 +527,10 @@ fieldset[disabled] .btn-primary.focus {
     border: #000;
     background: #000;
 }
-
+.textbox-other {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #D0D0D0;
+}
 @import "_fancybox-override";
 // @import "mobile";
