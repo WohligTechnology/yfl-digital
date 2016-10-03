@@ -1,0 +1,760 @@
+<div class="container main-form" ng-if="!formComplete">
+    <h3 class="text-center text-uppercase">Please enter the below details</h3>
+    <form name="webForm" class="mid-form" ng-submit="submitWebForm(formData)" ng-if="!formComplete">
+        <h4>Getting Started</h4>
+        <hr>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label> Name*</label>
+                    <input type="text" name="firstName" ng-model="formData.firstName" class="form-control" required aplha-only>
+                    <div class="error-msg" ng-if="webForm.firstName.$invalid && webForm.firstName.$touched">Please Enter Your First Name</div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>Company Name*</label>
+                    <input type="text" name="companyName" ng-model="formData.companyName" class="form-control" required aplha-only>
+                    <div class="error-msg" ng-if="webForm.companyName.$invalid && webForm.companyName.$touched">Please Enter Your Company Name</div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>What is the business and how will your website advance it?</label>
+                    <input type="text" name="advance" ng-model="formData.advance" class="form-control">
+                    <!-- <div class="error-msg" ng-if="webForm.advance.$invalid && webForm.advance.$touched">Please Enter the Field</div> -->
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>What message is the website supposed to convey?</label>
+                    <input type="text" name="convey" ng-model="formData.convey" class="form-control">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label>Who is the primary audience for the website (demographics)?</label>
+                    <input type="text" name="audience" ng-model="formData.audience" class="form-control">
+                </div>
+            </div>
+        </div>
+
+        <h4> Website/App requirements</h4>
+        <hr>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label>What is it that you require? If it’s a mobile app or social media, please share specific requirements.</label>
+                    <div class="magic-form">
+                        <div class="magic-resize">
+                            <input class="magic-checkbox" type="checkbox" name="requirement" value="mobileApp" ng-model="formData.requirement.mobileApp"
+                                id="app">
+                            <label class="text" for="app">
+                                Mobile App
+                            </label>
+                        </div>
+                        <div class="magic-resize">
+                            <input class="magic-checkbox" type="checkbox" name="requirement" value="mediaInt" ng-model="formData.requirement.mediaInt"
+                                id="Media">
+                            <label class="text" for="Media">
+                               Social Medial Integration
+                            </label>
+                        </div>
+                        <div class="magic-resize">
+                            <input class="magic-checkbox" type="checkbox" name="requirement" value="websitedesign" ng-model="formData.requirement.websitedesign"
+                                id="design">
+                            <label class="text" for="design">
+                              Website Design
+                            </label>
+                        </div>
+                        <div class="magic-resize">
+                            <input class="magic-checkbox" type="checkbox" name="requirement" value="websitecoding" ng-model="formData.requirement.websitecoding"
+                                id="coding">
+                            <label class="text" for="coding">
+                                Website Coding
+                            </label>
+                        </div>
+                        <div class="magic-resize">
+                            <input class="magic-checkbox" name="checkother" type="checkbox" value="tickother" id="otther" ng-model="formData.checkother.tickother">
+                            <label class="labewidtxt" for="otther">
+                               Other:
+                            </label>
+
+                        </div>
+                        <input ng-model="formData.checkother" type="text" class="form-control textbox-other" placeholder="Please mention other" ng-if="formData.checkother.tickother">
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>Do you need a website that can work smoothly on mobile devices like Samsung Galaxy (Android) and the iPhone (iOS)? This means the site has to be a ‘Responsive Design’ which adjusts dynamically to various screen sizes and resolutions.</label>
+                    <div class="magic-form">
+                        <div class="magic-resize">
+                            <input class="magic-radio" type="radio" name="demonstration" id="yes" value="true" ng-model="formData.demonstration">
+                            <label class="text" for="yes">
+                        Yes
+                     </label>
+                        </div>
+                        <div class="magic-resize">
+                            <input class="magic-radio" type="radio" name="demonstration" id="no" value="false" ng-model="formData.demonstration">
+                            <label class="text" for="no">
+                        No
+                     </label>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>Do you need a catalogue for the site?</label>
+                    <div class="magic-form">
+                        <div class="magic-resize">
+                            <input class="magic-radio" type="radio" name="demonstrations" id="yess" value="true" ng-model="formData.demonstrations">
+                            <label class="text" for="yess">
+                        Yes
+                     </label>
+                        </div>
+                        <div class="magic-resize">
+                            <input class="magic-radio" type="radio" name="demonstrations" id="noo" value="false" ng-model="formData.demonstrations">
+                            <label class="text" for="noo">
+                        No
+                     </label>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>Do you need a copywriter?</label>
+                    <div class="magic-form">
+                        <div class="magic-resize">
+                            <input class="magic-radio" type="radio" name="copyrighter" id="1" value="true" ng-model="formData.copyrighter">
+                            <label class="text" for="1">
+                        Yes
+                     </label>
+                        </div>
+                        <div class="magic-resize">
+                            <input class="magic-radio" type="radio" name="copyrighter" id="2" value="false" ng-model="formData.copyrighter">
+                            <label class="text" for="2">
+                        No
+                     </label>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>If you are using existing copy on your current website, will it be need to be modified in any way?</label>
+                    <div class="magic-form">
+                        <div class="magic-resize">
+                            <input class="magic-radio" type="radio" name="modified" id="3" value="true" ng-model="formData.modified">
+                            <label class="text" for="3">
+                        Yes
+                     </label>
+                        </div>
+                        <div class="magic-resize">
+                            <input class="magic-radio" type="radio" name="modified" id="4" value="false" ng-model="formData.modified">
+                            <label class="text" for="4">
+                        No
+                     </label>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>Do you need a web domain name and hosting for the website?</label>
+                    <div class="magic-form">
+                        <div class="magic-resize">
+                            <input class="magic-radio" type="radio" name="domain" id="5" value="true" ng-model="formData.domain">
+                            <label class="text" for="5">
+                        Yes
+                     </label>
+                        </div>
+                        <div class="magic-resize">
+                            <input class="magic-radio" type="radio" name="domain" id="6" value="false" ng-model="formData.domain">
+                            <label class="text" for="6">
+                        No
+                     </label>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>Would you like a Static or Dynamic website?</label>
+                    <div class="magic-form">
+                        <div class="magic-resize">
+                            <input class="magic-radio" type="radio" name="sitetype" id="7" value="true" ng-model="formData.sitetype">
+                            <label class="text" for="7">
+                        Yes
+                     </label>
+                        </div>
+                        <div class="magic-resize">
+                            <input class="magic-radio" type="radio" name="sitetype" id="8" value="false" ng-model="formData.sitetype">
+                            <label class="text" for="8">
+                        No
+                     </label>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <h4>Site Purpose</h4>
+        <hr>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>What do you want the user to do when they get to your site?</label>
+                    <input type="text" name="user" ng-model="formData.user" class="form-control">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>What are your goals for the website in terms of visitor actions?</label>
+                    <input type="text" name="actions" ng-model="formData.actions" class="form-control">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label>What do you think your site user should accomplish on your site?</label>
+                    <input type="text" name="accomplish" ng-model="formData.accomplish" class="form-control">
+                </div>
+            </div>
+        </div>
+        <h4>Website Features</h4>
+        <hr>
+        <div class="row">
+            <div class="col-md-12">
+                <label>Which of the following sections/features would you want in the site (other than Home, About and Contact)</label>
+                <div class="magic-form">
+                    <div class="magic-resize">
+                        <input class="magic-checkbox" name="features" value="catalog" id="cat" type="checkbox" ng-model="formData.features.catalog">
+                        <label class="text" for="cat">
+                              Catalog
+                            </label>
+                    </div>
+                    <div class="magic-resize">
+                        <input class="magic-checkbox" type="checkbox" name="features" value="gallery" id="gall" ng-model="formData.features.gallery">
+                        <label class="text" for="gall">
+                              Gallery / Slide Show
+                            </label>
+                    </div>
+                    <div class="magic-resize">
+                        <input class="magic-checkbox" type="checkbox" name="features" value="new" id="new" ng-model="formData.features.new">
+                        <label class="text" for="new">
+                             News
+                            </label>
+                    </div>
+                    <div class="magic-resize">
+                        <input class="magic-checkbox" type="checkbox" name="features" value="events" id="event" ng-model="formData.features.events">
+                        <label class="text" for="event">
+                                Events Calendar
+                            </label>
+                    </div>
+                    <div class="magic-resize">
+                        <input class="magic-checkbox" type="checkbox" name="features" value="press" id="pres" ng-model="formData.features.press">
+                        <label class="text" for="pres">
+                               Press
+                            </label>
+                    </div>
+                    <div class="magic-resize">
+                        <input class="magic-checkbox" type="checkbox" name="features" value="ulogin" id="log" ng-model="formData.features.ulogin">
+                        <label class="text" for="log">
+                               Support user login
+                            </label>
+                    </div>
+                    <div class="magic-resize">
+                        <input class="magic-checkbox" type="checkbox" name="features" value="portal" id="port" ng-model="formData.features.portal">
+                        <label class="text" for="port">
+                             Based on type of user, have different functionalists (Portals)
+                            </label>
+                    </div>
+                    <div class="magic-resize">
+                        <input class="magic-checkbox" type="checkbox" name="features" value="feedback" id="feed" ng-model="formData.features.feedback">
+                        <label class="text" for="feed">
+                             Feedback Form
+                            </label>
+                    </div>
+                    <div class="magic-resize">
+                        <input class="magic-checkbox" type="checkbox" name="features" value="contact" id="cont" ng-model="formData.features.contact">
+                        <label class="text" for="cont">
+                            Contact Form
+                            </label>
+                    </div>
+                    <div class="magic-resize">
+                        <input class="magic-checkbox" type="checkbox" name="features" value="logins" id="logs" ng-model="formData.features.logins">
+                        <label class="text" for="logs">
+                           Login
+                            </label>
+                    </div>
+                    <div class="magic-resize">
+                        <input class="magic-checkbox" type="checkbox" name="features" value="custom" id="customs" ng-model="formData.features.custom">
+                        <label class="text" for="customs">
+                          Some specific unique/custom functionality.
+                            </label>
+                    </div>
+                    <div class="magic-resize">
+                        <input class="magic-checkbox" type="checkbox" name="features" value="othering" id="fothering" ng-model="formData.features.othering">
+                        <label class="labewidtxt" for="fothering">
+                               Other:
+                            </label>
+                    </div>
+                    <input ng-model="formData.features" type="text" class="form-control textbox-other" placeholder="Please mention other" ng-if="formData.features.othering">
+                </div>
+
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>Would your website have a blog?</label>
+                    <div class="magic-form">
+                        <div class="magic-resize">
+                            <input class="magic-radio" type="radio" name="blog" id="9" value="true" ng-model="formData.blog">
+                            <label class="text" for="9">
+                        Yes
+                     </label>
+                        </div>
+                        <div class="magic-resize">
+                            <input class="magic-radio" type="radio" name="blog" id="10" value="false" ng-model="formData.blog">
+                            <label class="text" for="10">
+                        No
+                     </label>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>Would your website require e-commerce?</label>
+                    <div class="magic-form">
+                        <div class="magic-resize">
+                            <input class="magic-radio" type="radio" name="ecommerce" id="11" value="true" ng-model="formData.ecommerce">
+                            <label class="text" for="11">
+                        Yes
+                     </label>
+                        </div>
+                        <div class="magic-resize">
+                            <input class="magic-radio" type="radio" name="ecommerce" id="12" value="false" ng-model="formData.ecommerce">
+                            <label class="text" for="12">
+                        No
+                     </label>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>Do you expect the site to send mailers / email automatically?</label>
+                    <div class="magic-form">
+                        <div class="magic-resize">
+                            <input class="magic-radio" type="radio" name="mailers" id="13" value="true" ng-model="formData.mailers">
+                            <label class="text" for="13">
+                        Yes
+                     </label>
+                        </div>
+                        <div class="magic-resize">
+                            <input class="magic-radio" type="radio" name="mailers" id="14" value="false" ng-model="formData.mailers">
+                            <label class="text" for="14">
+                        No
+                     </label>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>Do you want people to be able to rate things on your site?</label>
+                    <div class="magic-form">
+                        <div class="magic-resize">
+                            <input class="magic-radio" type="radio" name="rate" id="15" value="true" ng-model="formData.rate">
+                            <label class="text" for="15">
+                        Yes
+                     </label>
+                        </div>
+                        <div class="magic-resize">
+                            <input class="magic-radio" type="radio" name="rate" id="16" value="false" ng-model="formData.rate">
+                            <label class="text" for="16">
+                        No
+                     </label>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>Ideally if you could, please send us a sitemap of the website.</label>
+                    <input type="text" name="ideally" ng-model="formData.ideally" class="form-control">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <label>Would you like your work/products to be professionally shot?</label>
+                <div class="magic-form">
+                    <div class="magic-resize">
+                        <input class="magic-radio" type="radio" name="products" id="17" value="true" ng-model="formData.products">
+                        <label class="text" for="17">
+                        Yes
+                     </label>
+                    </div>
+                    <div class="magic-resize">
+                        <input class="magic-radio" type="radio" name="products" id="18" value="false" ng-model="formData.products">
+                        <label class="text" for="18">
+                        No
+                     </label>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <label>How will you attract visitors to your site? Are you looking for Search Engine Optimisation/Google rankings (SEO)?</label>
+                <div class="magic-form">
+                    <div class="magic-resize">
+                        <input class="magic-radio" type="radio" name="attract" id="19" value="true" ng-model="formData.attract">
+                        <label class="text" for="19">
+                        Yes
+                     </label>
+                    </div>
+                    <div class="magic-resize">
+                        <input class="magic-radio" type="radio" name="attract" id="20" value="false" ng-model="formData.attract">
+                        <label class="text" for="20">
+                        No
+                     </label>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-md-6">
+                <label>Are you willing to spend extra for advanced SEO?</label>
+                <div class="magic-form">
+                    <div class="magic-resize">
+                        <input class="magic-radio" type="radio" name="seo" id="21" value="true" ng-model="formData.seo">
+                        <label class="text" for="21">
+                        Yes
+                     </label>
+                    </div>
+                    <div class="magic-resize">
+                        <input class="magic-radio" type="radio" name="seo" id="22" value="false" ng-model="formData.seo">
+                        <label class="text" for="22">
+                        No
+                     </label>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <label>If you plan to update content, do you have content writers and people who can create content (including images) for you?</label>
+                <div class="magic-form">
+                    <div class="magic-resize">
+                        <input class="magic-radio" type="radio" name="contentwriter" id="content" value="true" ng-model="formData.contentwriter">
+                        <label class="text" for="content">
+                        Yes
+                     </label>
+                    </div>
+                    <div class="magic-resize">
+                        <input class="magic-radio" type="radio" name="contentwriter" id="writer" value="false" ng-model="formData.contentwriter">
+                        <label class="text" for="writer">
+                        No
+                     </label>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-md-6">
+                <label>Would your content writers happen to know HTML?</label>
+                <div class="magic-form">
+                    <div class="magic-resize">
+                        <input class="magic-radio" type="radio" name="html" id="23" value="true" ng-model="formData.html">
+                        <label class="text" for="23">
+                        Yes
+                     </label>
+                    </div>
+                    <div class="magic-resize">
+                        <input class="magic-radio" type="radio" name="html" id="24" value="false" ng-model="formData.html">
+                        <label class="text" for="24">
+                        No
+                     </label>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <label>What kind of content do you plan to update?</label>
+                <div class="magic-form">
+                    <div class="magic-resize">
+                        <input class="magic-checkbox" type="checkbox" name="format" value="simpleformat" id="updation" ng-model="formData.format.simpleformat">
+                        <label class="text" for="updation">
+                             Simple text with formatting, colour, fonts & links
+                            </label>
+                    </div>
+                    <div class="magic-resize">
+                        <input class="magic-checkbox" type="checkbox" name="format" value="diffformat" id="styles" ng-model="formData.format.diffformat">
+                        <label class="text" for="styles">
+                            Content, but with different formatting styles
+                            </label>
+                    </div>
+                    <div class="magic-resize">
+                        <input class="magic-checkbox" type="checkbox" name="format" value="documents" id="docs" ng-model="formData.format.documents">
+                        <label class="text" for="docs">
+                             Documents
+                            </label>
+                    </div>
+                    <div class="magic-resize">
+                        <input class="magic-checkbox" type="checkbox" name="format" value="images" id="imag" ng-model="formData.format.images">
+                        <label class="text" for="imag">
+                              Images
+                            </label>
+                    </div>
+                    <div class="magic-resize">
+                        <input class="magic-checkbox" type="checkbox" name="format" value="effects" id="effect" ng-model="formData.format.effects">
+                        <label class="text" for="effect">
+                             Complex Animation / Effects / Graphics
+                            </label>
+                    </div>
+                    <div class="magic-resize">
+                        <input class="magic-checkbox" type="checkbox" name="format" value="sother" id="otherss" ng-model="formData.format.sother">
+                        <label class="labewidtxt" for="otherss">
+                               Other:
+                            </label>
+                    </div>
+                    <input ng-model="formData.format" type="text" class="form-control textbox-other" placeholder="Please mention other" ng-if="formData.format.sother">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <label>Do you intend to have any financial transactions online now or in the near future? If so, would you like an e-commerce capability on your website?</label>
+                <div class="magic-form">
+                    <div class="magic-resize">
+                        <input class="magic-radio" type="radio" name="transaction" id="25" value="true" ng-model="formData.transaction">
+                        <label class="text" for="25">
+                        Yes
+                     </label>
+                    </div>
+                    <div class="magic-resize">
+                        <input class="magic-radio" type="radio" name="transaction" id="26" value="false" ng-model="formData.transaction">
+                        <label class="text" for="26">
+                        No
+                     </label>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label> What is the duration you need this site to be up, before you think you need to revamp or change it in a major way?
+
+Your answer
+</label>
+                    <input type="text" class="form-control" name="revamp" ng-model="formData.revamp">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <label>Are you willing to consider spending on Online Marketing, like via Facebook or Google Ad words?</label>
+                <div class="magic-form">
+                    <div class="magic-resize">
+                        <input class="magic-radio" type="radio" name="social" id="27" value="true" ng-model="formData.social">
+                        <label class="text" for="27">
+                        Yes
+                     </label>
+                    </div>
+                    <div class="magic-resize">
+                        <input class="magic-radio" type="radio" name="social" id="28" value="false" ng-model="formData.social">
+                        <label class="text" for="28">
+                        No
+                     </label>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label> How frequently will you expect to update it?
+</label>
+                    <input type="text" class="form-control" name="update" ng-model="formData.update">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <label>Do different people have different Roles/Permissions to manage the site?</label>
+                <div class="magic-form">
+                    <div class="magic-resize">
+                        <input class="magic-radio" type="radio" name="roles" id="29" value="true" ng-model="formData.roles">
+                        <label class="text" for="29">
+                        Yes
+                     </label>
+                    </div>
+                    <div class="magic-resize">
+                        <input class="magic-radio" type="radio" name="roles" id="30" value="false" ng-model="formData.roles">
+                        <label class="text" for="30">
+                        No
+                     </label>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-md-6">
+                <label>All sites are built for English audiences, do you wish additional languages?</label>
+                <div class="magic-form">
+                    <div class="magic-resize">
+                        <input class="magic-radio" type="radio" name="language" id="31" value="true" ng-model="formData.language">
+                        <label class="text" for="31">
+                        Yes
+                     </label>
+                    </div>
+                    <div class="magic-resize">
+                        <input class="magic-radio" type="radio" name="language" id="32" value="false" ng-model="formData.language">
+                        <label class="text" for="32">
+                        No
+                     </label>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label> What is the tone of the website?
+</label>
+                    <input type="text" class="form-control" name="tone" ng-model="formData.tone">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label> Favorite Sites: Please list 3-5 websites you like. Include the URL, what you like about each site, and what you would improve upon?
+</label>
+                    <input type="text" class="form-control" name="url" ng-model="formData.url">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label> Least favorite sites: Please list 3-5 websites you don’t like, include the URL. What don’t you like about these sites? What redeeming qualities to they have?
+</label>
+                    <input type="text" class="form-control" name="qualities" ng-model="formData.qualities">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label> Selling points: tell us why you, your products or your services are better than your competition.
+</label>
+                    <input type="text" class="form-control" name="services" ng-model="formData.services">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label> Site no no’s: Do you have any definite remarks on what you don’t want to have on your website?
+</label>
+                    <input type="text" class="form-control" name="remarks" ng-model="formData.remarks">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label> Please list 5 (or more) adjectives that you think describe your company or should describe your company in order of relevance / importance.
+</label>
+                    <input type="text" class="form-control" name="describe" ng-model="formData.describe">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label> Competitors: are there any websites that you would consider your “competition”?
+           
+</label>
+                    <span> feel free to provide more information on</span>
+                    <input type="text" name="competition" class="form-control" ng-model="formData.competition">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <label>Would you like a more “corporate” (template based) site such as <a href="">avasara.in</a> or a more experimental site where almost all pages have a different feel, such as <a href="">wrap.co.in</a>?</label>
+                <div class="magic-form">
+                    <div class="magic-resize">
+                        <input class="magic-radio" type="radio" name="sitetypes" id=" Corporate" value="true" ng-model="formData.sitetypes">
+                        <label class="text" for=" Corporate">
+                        Corporate
+      </label>
+                    </div>
+                    <div class="magic-resize">
+                        <input class="magic-radio" type="radio" name="sitetypes" id=" Experimental" value="false" ng-model="formData.sitetypes">
+                        <label class="text" for=" Experimental">
+                     Experimental
+
+                     </label>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="magic-form text-center">
+            <div class="magic-resize">
+                <input class="magic-checkbox" type="checkbox" id="terms" name="terms" value="true" required ng-model="formData.termsConditions">
+                <label class="text text-left" for="terms">
+               I have read and accept the&nbsp;<u>Terms &amp; Conditions</u>
+            </label>
+            </div>
+        </div>
+
+        <div class="form-group text-center">
+            <button type="submit" class="btn btn-primary butn btn-lg sub-btn" ng-disabled="webForm.$invalid"><span ng-if="webForm.$invalid">Please Enter Compulsory fields</span> <span>Submit</span></button>
+
+
+        </div>
+    </form>
+
+</div>

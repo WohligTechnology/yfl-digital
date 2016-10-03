@@ -18,9 +18,14 @@ firstapp.config(function ($stateProvider, $urlRouterProvider, $httpProvider, $lo
             templateUrl: "views/template.html",
             controller: 'HomeCtrl'
         })
+        .state('webrequirement', {
+            url: "/form-webreq",
+            templateUrl: "views/template.html",
+            controller: 'WebCtrl'
+        })
 
     .state('branding', {
-        url: "/branding",
+        url: "/form-branding",
         templateUrl: "views/template.html",
         controller: 'BrandCtrl'
     })

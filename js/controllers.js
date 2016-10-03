@@ -6,12 +6,12 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
 
-    $scope.mySlides = [
-        'http://flexslider.woothemes.com/images/kitchen_adventurer_cheesecake_brownie.jpg',
-        'http://flexslider.woothemes.com/images/kitchen_adventurer_lemon.jpg',
-        'http://flexslider.woothemes.com/images/kitchen_adventurer_donut.jpg',
-        'http://flexslider.woothemes.com/images/kitchen_adventurer_caramel.jpg'
-    ];
+    // $scope.mySlides = [
+    //     'http://flexslider.woothemes.com/images/kitchen_adventurer_cheesecake_brownie.jpg',
+    //     'http://flexslider.woothemes.com/images/kitchen_adventurer_lemon.jpg',
+    //     'http://flexslider.woothemes.com/images/kitchen_adventurer_donut.jpg',
+    //     'http://flexslider.woothemes.com/images/kitchen_adventurer_caramel.jpg'
+    // ];
 })
 
 .controller('FormCtrl', function ($scope, TemplateService, NavigationService, $timeout) {
@@ -29,18 +29,31 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 })
 
 .controller('BrandCtrl', function ($scope, TemplateService, NavigationService, $timeout) {
-    $scope.template = TemplateService.changecontent("branding"); //Use same name of .html file
-    $scope.menutitle = NavigationService.makeactive("Branding"); //This is the Title of the Website
-    TemplateService.title = $scope.menutitle;
-    $scope.navigation = NavigationService.getnav();
+        $scope.template = TemplateService.changecontent("form-branding"); //Use same name of .html file
+        $scope.menutitle = NavigationService.makeactive("Form Branding"); //This is the Title of the Website
+        TemplateService.title = $scope.menutitle;
+        $scope.navigation = NavigationService.getnav();
 
-    $scope.formSubmitted = false;
+        $scope.formSubmitted = false;
 
-    $scope.submitForm = function (data) {
-        console.log(data);
-        $scope.formSubmitted = true;
-    }
-})
+        $scope.submitForm = function (data) {
+            console.log(data);
+            $scope.formSubmitted = true;
+        }
+    })
+    .controller('WebCtrl', function ($scope, TemplateService, NavigationService, $timeout) {
+        $scope.template = TemplateService.changecontent("form-webreq"); //Use same name of .html file
+        $scope.menutitle = NavigationService.makeactive("Form Web Requirement"); //This is the Title of the Website
+        TemplateService.title = $scope.menutitle;
+        $scope.navigation = NavigationService.getnav();
+
+        $scope.formSubmitted = false;
+
+        $scope.submitForm = function (data) {
+            console.log(data);
+            $scope.formSubmitted = true;
+        }
+    })
 
 .controller('headerctrl', function ($scope, TemplateService) {
     $scope.template = TemplateService;
