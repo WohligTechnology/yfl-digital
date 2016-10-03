@@ -336,10 +336,12 @@ fieldset[disabled] .btn-primary.focus {
 }
 
 .magic-form {
-    .magic-resize {
+    .magic-resize,
+    .magic-resizes {
         padding: 5px;
         display: inline-block;
         width: 32.33%;
+        vertical-align: top;
         input[type="checkbox"],
         input[type="radio"] {
             display: none;
@@ -485,6 +487,37 @@ fieldset[disabled] .btn-primary.focus {
     }
 }
 
+.magic-form {
+    .magic-resizes {
+        width: auto!important;
+        padding: 0 !important;
+    }
+}
+
+.f30 {
+    margin-bottom: 30px;
+}
+
+.magic-form .magic-resizes .magic-radio+label:before {
+    position: absolute;
+    top: 25px;
+    left: -2px;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    content: '';
+    border: 1px solid #c0c0c0;
+}
+
+.magic-form .magic-resizes .magic-radio+label:after {
+    top: 32px;
+    left: 4px;
+}
+
+.magic-form .magic-resizes label {
+    margin-left: 21px!important;
+}
+
 .form-group {
     position: relative;
 }
@@ -527,10 +560,12 @@ fieldset[disabled] .btn-primary.focus {
     border: #000;
     background: #000;
 }
+
 .textbox-other {
     width: 100%;
     border: none;
     border-bottom: 1px solid #D0D0D0;
 }
+
 @import "_fancybox-override";
 // @import "mobile";
