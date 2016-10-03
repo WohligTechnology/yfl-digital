@@ -567,5 +567,9 @@ fieldset[disabled] .btn-primary.focus {
     border-bottom: 1px solid #D0D0D0;
 }
 
+.mleft {
+    margin-left: 21px;
+}
+
 @import "_fancybox-override";
-// @import "mobile";
+@import "mobile";

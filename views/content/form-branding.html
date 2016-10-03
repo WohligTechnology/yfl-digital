@@ -8,14 +8,14 @@
         <div class="form-group">
           <label> Name*</label>
           <input type="text" name="firstName" ng-model="formData.firstName" class="form-control" required aplha-only>
-          <div class="error-msg" ng-if="brandForm.firstName.$invalid && brandForm.firstName.$touched">Please Enter Your First Name</div>
+          <div class="error-msg" ng-if="brandForm.firstName.$invalid && brandForm.firstName.$touched">Please Enter Your Name</div>
         </div>
       </div>
       <div class="col-md-6">
         <div class="form-group">
           <label>Company</label>
-          <input type="text" name="company" ng-model="formData.company" class="form-control" required aplha-only>
-          <div class="error-msg" ng-if="brandForm.company.$invalid && brandForm.company.$touched">Please Enter Your Company Name</div>
+          <input type="text" name="company" ng-model="formData.company" class="form-control">
+          <!--<div class="error-msg" ng-if="brandForm.company.$invalid && brandForm.company.$touched">Please Enter Your Company Name</div>-->
         </div>
       </div>
     </div>
@@ -122,8 +122,16 @@
     <div class="row">
       <div class="col-md-12">
         <div class="form-group">
-          <label>Which of the following characteristics best describe the personality you want your brand to have? (Choose as many as you please!)</label>          Unconventional
+          <label>Which of the following characteristics best describe the personality you want your brand to have? (Choose as many as you please!)</label>
           <div class="magic-form">
+
+            <div class="magic-resize">
+              <input class="magic-checkbox" type="checkbox" name="personality" value=" Unconventional" ng-model="formData.personality. Unconventional"
+                id="unconvent">
+              <label class="text" for="unconvent">
+                            Unconventional
+                            </label>
+            </div>
             <div class="magic-resize">
               <input class="magic-checkbox" type="checkbox" name="personality" value="practical" ng-model="formData.personality.practical"
                 id="practi">
@@ -351,7 +359,7 @@
         <div class="form-group f30">
           <label>Do you see your Brand being more Feminine (1) or Masculine (10)?</label>
           <div class="magic-form">
-            <label class="pull-left">Feminine</label>
+            <label class="pull-left f11">Feminine</label>
             <div class="magic-resizes">
               <input class="magic-radio" type="radio" name="fm" id="fm1" value="fmone" ng-model="formData.fm">
               <label class="text" for="fm1">
@@ -412,7 +420,7 @@
                       10
                      </label>
             </div>
-            <label class="pull-right">Masculine</label>
+            <label class="pull-right f11">Masculine</label>
           </div>
         </div>
       </div>
@@ -421,7 +429,7 @@
         <div class="form-group f30">
           <label>Do you see your Brand being Younger (1) or Mature (10)?</label>
           <div class="magic-form">
-            <label class="pull-left">Younger</label>
+            <label class="pull-left f11">Younger</label>
             <div class="magic-resizes">
               <input class="magic-radio" type="radio" name="ym" id="ym1" value="ymone" ng-model="formData.ym">
               <label class="text" for="ym1">
@@ -482,7 +490,7 @@
                       10
                      </label>
             </div>
-            <label class="pull-right">Mature</label>
+            <label class="pull-right f11">Mature</label>
           </div>
         </div>
       </div>
@@ -495,7 +503,7 @@
 
           <label>Do you see your Brand being more Affordable (1) or Luxurious (10)?</label>
           <div class="magic-form">
-            <label class="pull-left">Affordable</label>
+            <label class="pull-left f11">Affordable</label>
             <div class="magic-resizes">
               <input class="magic-radio" type="radio" name="al" id="al1" value="alone" ng-model="formData.al">
               <label class="text" for="al1">
@@ -556,7 +564,7 @@
                       10
                      </label>
             </div>
-            <label class="pull-right">Luxurious</label>
+            <label class="pull-right f11">Luxurious</label>
           </div>
         </div>
       </div>
@@ -565,7 +573,7 @@
         <div class="form-group f30">
           <label>Do you see your Brand being more Classic (1) or Modern (10)?</label>
           <div class="magic-form">
-            <label class="pull-left">Classic</label>
+            <label class="pull-left f11">Classic</label>
             <div class="magic-resizes">
               <input class="magic-radio" type="radio" name="cm" id="cm1" value="cmone" ng-model="formData.cm">
               <label class="text" for="cm1">
@@ -626,7 +634,7 @@
                       10
                      </label>
             </div>
-            <label class="pull-right">Modern</label>
+            <label class="pull-right f11">Modern</label>
           </div>
         </div>
       </div>
@@ -637,8 +645,8 @@
       <div class="col-md-5">
         <div class="form-group f30">
           <label>Do you see your Brand being more Playful (1) or Serious (10)?</label>
-          <div class="magic-form">
-            <label class="pull-left">Playful</label>
+          <div class="magic-form clearfix">
+            <label class="pull-left f11">Playful</label>
             <div class="magic-resizes">
               <input class="magic-radio" type="radio" name="ps" id="1" value="one" ng-model="formData.ps">
               <label class="text" for="1">
@@ -699,7 +707,7 @@
                       10
                      </label>
             </div>
-            <label class="pull-right">Serious</label>
+            <label class="pull-right f11">Serious</label>
           </div>
         </div>
       </div>
@@ -892,14 +900,14 @@ Customised
         <div class="form-group">
           <label> What are the brand’s origins? (How did it start, where did the idea come from, etc)</label>
           <input type="text" name="origins" ng-model="formData.origins" class="form-control">
-          <div class="error-msg" ng-if="brandForm.origins.$invalid && brandForm.origins.$touched">Please Enter brands origins</div>
+          <!--<div class="error-msg" ng-if="brandForm.origins.$invalid && brandForm.origins.$touched">Please Enter brands origins</div>-->
         </div>
       </div>
       <div class="col-md-6">
         <div class="form-group">
           <label>Where does the brand want to be in the next 5-10 years?</label>
           <input type="text" name="next" ng-model="formData.next" class="form-control">
-          <div class="error-msg" ng-if="brandForm.next.$invalid && brandForm.next.$touched">Please Enter where brand wants to be</div>
+          <!--<div class="error-msg" ng-if="brandForm.next.$invalid && brandForm.next.$touched">Please Enter where brand wants to be</div>-->
         </div>
       </div>
     </div>
@@ -954,13 +962,13 @@ Mobile
         <div class="form-group">
           <label> Is there something in particular you love and want your brand identity to include?</label>
           <input type="text" name="identity" ng-model="formData.identity" class="form-control">
-          <div class="error-msg" ng-if="brandForm.identity.$invalid && brandForm.identity.$touched">Please Enter Something You Love</div>
+          <!--<div class="error-msg" ng-if="brandForm.identity.$invalid && brandForm.identity.$touched">Please Enter Something You Love</div>-->
         </div>
       </div>
     </div>
 
     <div class="magic-form text-center">
-      <div class="magic-resize">
+      <div class="magic-resize termobile">
         <input class="magic-checkbox" type="checkbox" id="terms" name="terms" value="true" required ng-model="formData.termsConditions">
         <label class="text text-left" for="terms">
                I have read and accept the&nbsp;<u>Terms &amp; Conditions</u>
@@ -969,7 +977,7 @@ Mobile
     </div>
 
     <div class="form-group text-center">
-      <button type="submit" class="btn btn-primary butn btn-lg sub-btn" ng-disabled="brandForm.$invalid"> <span ng-if="brandForm.$invalid">Please Enter Compulsory fields</span> <span>Submit</span></button>
+      <button type="submit" class="btn btn-primary butn btn-lg sub-btn" ng-disabled="brandForm.$invalid"> <span ng-if="brandForm.$invalid">Please Enter Compulsory fields</span> <span ng-if="!brandForm.$invalid">Submit</span></button>
 
 
     </div>

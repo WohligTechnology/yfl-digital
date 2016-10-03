@@ -1,4 +1,41 @@
-@media (max-width: $screen-xs-max) {}
+@media (max-width: $screen-xs-max) {
+    .form-group {
+        .butn {
+            width: 100%;
+        }
+    }
+    .magic-form {
+        .magic-resize {
+            width: 45% !important;
+        }
+        .termobile {
+            width: auto!important;
+        }
+        .pull-right,
+        .pull-left {
+            float: none!important;
+        }
+    }
+    .f11 {
+        font-size: 11px;
+    }
+    .magic-form .magic-resizes label {
+        margin-left: 8px !important;
+    }
+    .magic-form .magic-resizes .magic-radio+label:before {
+        width: 15px;
+        height: 15px;
+    }
+    .magic-form .magic-resizes .magic-radio+label:after {
+        top: 30px;
+        left: 3px;
+    }
+    .magic-form .magic-resize .magic-radio+label:after,
+    .magic-form .magic-resizes .magic-radio+label:after {
+        width: 6px;
+        height: 6px;
+    }
+}
 
 @media (max-width: $screen-sm-max) {}
 
