@@ -574,7 +574,8 @@ fieldset[disabled] .btn-primary.focus {
 }
 
 .mid-form {
-    label {
+    label,
+    h4 {
         font-weight: normal!important;
         font-family: $font-family-serif!important;
     }

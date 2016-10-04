@@ -34,12 +34,12 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
 
-        $scope.formSubmitted = false;
+        // $scope.formSubmitted = false;
 
-        $scope.submitForm = function (data) {
-            console.log(data);
-            $scope.formSubmitted = true;
-        }
+        // $scope.submitForm = function (data) {
+        //     console.log(data);
+        //     $scope.formSubmitted = true;
+        // }
     })
     .controller('WebCtrl', function ($scope, TemplateService, NavigationService, $timeout) {
         $scope.template = TemplateService.changecontent("form-webreq"); //Use same name of .html file
@@ -47,12 +47,12 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
 
-        $scope.formSubmitted = false;
+        // $scope.formSubmitted = false;
 
-        $scope.submitForm = function (data) {
-            console.log(data);
-            $scope.formSubmitted = true;
-        }
+        // $scope.submitForm = function (data) {
+        //     console.log(data);
+        //     $scope.formSubmitted = true;
+        // }
     })
 
 .controller('headerctrl', function ($scope, TemplateService) {
