@@ -564,9 +564,9 @@ fieldset[disabled] .btn-primary.focus {
 }
 
 .textbox-other {
-    width: 100%;
-    border: none;
-    border-bottom: 1px solid #D0D0D0;
+    width: 60%;
+    // border: none;
+    // border-bottom: 1px solid #D0D0D0;
 }
 
 .mleft {
@@ -579,6 +579,42 @@ fieldset[disabled] .btn-primary.focus {
         font-weight: normal!important;
         font-family: $font-family-serif!important;
     }
+}
+
+.other-label {
+    color: #333333;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+.middle-name-label,
+.last-name-label {
+    margin-top: 25px;
+}
+
+.label-note {
+    color: rgba(55, 51, 51, 0.77);
+    margin-bottom: 10px;
+}
+
+.explanation {
+    color: rgba(55, 51, 51, 0.77);
+    margin-bottom: 10px;
+    text-align: justify;
+    line-height: normal;
+}
+
+.box-space {
+    margin-bottom: 25px;
+}
+
+.final-btn {
+    padding: 25px 0;
+}
+
+.img-holder {
+    width: 60%;
 }
 
 @import "_fancybox-override";

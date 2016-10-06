@@ -1,19 +1,40 @@
 <div class="container main-form" ng-if="!formComplete">
-  <h3 class="text-center text-uppercase">Please enter the below details</h3>
+  <h3 class="text-center text-uppercase">Help us understand what your brand stands for and how you want to bring it to life</h3>
   <form name="brandForm" class="mid-form" ng-submit="submitBrandForm(formData)" ng-if="!formComplete">
     <h4>Basic Information</h4>
     <hr>
     <div class="row">
       <div class="col-md-6">
-        <div class="form-group">
-          <label> Name*</label>
-          <input type="text" name="firstName" ng-model="formData.firstName" class="form-control" required aplha-only>
-          <div class="error-msg" ng-if="brandForm.firstName.$invalid && brandForm.firstName.$touched">Please Enter Your Name</div>
+        <div class="row">
+
+          <div class="col-md-4">
+            <div class="form-group">
+              <label>First Name*</label>
+              <input type="text" name="firstName" ng-model="formData.firstName" class="form-control" required aplha-only>
+              <div class="error-msg" ng-if="brandForm.firstName.$invalid && brandForm.firstName.$touched">Please Enter Your First Name</div>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="form-group">
+              <label>Middle Name</label>
+              <input type="text" name="middleName" class="form-control" required aplha-only>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="form-group">
+              <label>Last Name*</label>
+              <input type="text" name="lastName" ng-model="formData.lastName" class="form-control" required aplha-only>
+              <div class="error-msg" ng-if="brandForm.lastName.$invalid && brandForm.lastName.$touched">Please Enter Your Last Name</div>
+            </div>
+          </div>
+
         </div>
       </div>
       <div class="col-md-6">
         <div class="form-group">
-          <label>Company</label>
+          <label>Company - (If applicable)</label>
           <input type="text" name="company" ng-model="formData.company" class="form-control">
           <!--<div class="error-msg" ng-if="brandForm.company.$invalid && brandForm.company.$touched">Please Enter Your Company Name</div>-->
         </div>
@@ -27,26 +48,26 @@
           <label>Does your brand have a name?</label>
           <div class="magic-form">
             <div class="magic-resize">
-              <input class="magic-radio" type="radio" name="demos" id="ya" value="true" ng-model="formData.demos">
+              <input class="magic-radio" type="radio" name="demos" id="ya" value="true" ng-click="showTextbox('y')">
               <label class="text" for="ya">
                         Yes
                      </label>
             </div>
             <div class="magic-resize">
-              <input class="magic-radio" type="radio" name="demos" id="na" value="false" ng-model="formData.demos">
+              <input class="magic-radio" type="radio" name="demos" id="na" value="false" ng-click="showTextbox('n')">
               <label class="text" for="na">
                         No
                      </label>
             </div>
-            <div class="magic-resize">
+            <!--<div class="magic-resize">
               <input class="magic-radio" type="radio" name="demos" id="rother" value="none" ng-model="formData.demos">
               <label class="text" for="rother">
                         other
                      </label>
-            </div>
-            <input ng-model="formData.demos" type="text" class="form-control textbox-other" placeholder="Please mention other" ng-if="formData.demos.none">
-          </div>
+            </div>-->
 
+          </div>
+          <input type="text" class="form-control textbox-other" placeholder="Please mention other" ng-show="textboxVal">
         </div>
       </div>
       <div class="col-md-6">
@@ -104,15 +125,15 @@
             </div>
 
 
-            <div class="magic-resize">
+            <!--<div class="magic-resize">
               <input class="magic-checkbox" name="brandother" type="checkbox" value="bothers" id="brandother" ng-model="formData.brandother.bothers">
               <label class="labewidtxt" for="brandother">
                                Other:
                             </label>
-
-            </div>
-            <input type="text" class="form-control textbox-other" placeholder="Please mention other" ng-if="formData.brandother.bothers">
+            </div>-->
           </div>
+          <p class="other-label">Other or if you want to elaborate:</p>
+          <input type="text" class="form-control textbox-other" placeholder="">
         </div>
       </div>
     </div>
@@ -126,22 +147,19 @@
           <div class="magic-form">
 
             <div class="magic-resize">
-              <input class="magic-checkbox" type="checkbox" name="personality" value=" Unconventional" ng-model="formData.personality. Unconventional"
-                id="unconvent">
+              <input class="magic-checkbox" type="checkbox" name="personality" value=" Unconventional" ng-model="formData.personality. Unconventional" id="unconvent">
               <label class="text" for="unconvent">
                             Unconventional
                             </label>
             </div>
             <div class="magic-resize">
-              <input class="magic-checkbox" type="checkbox" name="personality" value="practical" ng-model="formData.personality.practical"
-                id="practi">
+              <input class="magic-checkbox" type="checkbox" name="personality" value="practical" ng-model="formData.personality.practical" id="practi">
               <label class="text" for="practi">
                            Practical
                             </label>
             </div>
             <div class="magic-resize">
-              <input class="magic-checkbox" type="checkbox" name="personality" value="Inventive" ng-model="formData.personality.Inventive"
-                id="invent">
+              <input class="magic-checkbox" type="checkbox" name="personality" value="Inventive" ng-model="formData.personality.Inventive" id="invent">
               <label class="text" for="invent">
                             Inventive
                             </label>
@@ -160,127 +178,109 @@
             </div>
 
             <div class="magic-resize">
-              <input class="magic-checkbox" type="checkbox" name="personality" value="Powerful" ng-model="formData.personality.Powerful"
-                id="power">
+              <input class="magic-checkbox" type="checkbox" name="personality" value="Powerful" ng-model="formData.personality.Powerful" id="power">
               <label class="text" for="power">
                           Powerful
                             </label>
             </div>
             <div class="magic-resize">
-              <input class="magic-checkbox" type="checkbox" name="personality" value="Dependable" ng-model="formData.personality.Dependable"
-                id="depend">
+              <input class="magic-checkbox" type="checkbox" name="personality" value="Dependable" ng-model="formData.personality.Dependable" id="depend">
               <label class="text" for="depend">
                            Dependable
                             </label>
             </div>
             <div class="magic-resize">
-              <input class="magic-checkbox" type="checkbox" name="personality" value="Protective" ng-model="formData.personality.Protective"
-                id="protect">
+              <input class="magic-checkbox" type="checkbox" name="personality" value="Protective" ng-model="formData.personality.Protective" id="protect">
               <label class="text" for="protect">
                           Protective
                             </label>
             </div>
             <div class="magic-resize">
-              <input class="magic-checkbox" type="checkbox" name="personality" value="Creative" ng-model="formData.personality.Creative"
-                id="create">
+              <input class="magic-checkbox" type="checkbox" name="personality" value="Creative" ng-model="formData.personality.Creative" id="create">
               <label class="text" for="create">
                          Creative
                             </label>
             </div>
             <div class="magic-resize">
-              <input class="magic-checkbox" type="checkbox" name="personality" value="Optimistic" ng-model="formData.personality.Optimistic"
-                id="optimis">
+              <input class="magic-checkbox" type="checkbox" name="personality" value="Optimistic" ng-model="formData.personality.Optimistic" id="optimis">
               <label class="text" for="optimis">
                          Optimistic
                             </label>
             </div>
             <div class="magic-resize">
-              <input class="magic-checkbox" type="checkbox" name="personality" value="Nurturing" ng-model="formData.personality.Nurturing"
-                id="nuture">
+              <input class="magic-checkbox" type="checkbox" name="personality" value="Nurturing" ng-model="formData.personality.Nurturing" id="nuture">
               <label class="text" for="nuture">
                        Nurturing
                             </label>
             </div>
             <div class="magic-resize">
-              <input class="magic-checkbox" type="checkbox" name="personality" value="Realistic" ng-model="formData.personality.Realistic"
-                id="real">
+              <input class="magic-checkbox" type="checkbox" name="personality" value="Realistic" ng-model="formData.personality.Realistic" id="real">
               <label class="text" for="real">
                        Realistic
                             </label>
             </div>
             <div class="magic-resize">
-              <input class="magic-checkbox" type="checkbox" name="personality" value="Adventurous" ng-model="formData.personality.Adventurous"
-                id="adventure">
+              <input class="magic-checkbox" type="checkbox" name="personality" value="Adventurous" ng-model="formData.personality.Adventurous" id="adventure">
               <label class="text" for="adventure">
                         Adventurous
                             </label>
             </div>
             <div class="magic-resize">
-              <input class="magic-checkbox" type="checkbox" name="personality" value="Entertaining" ng-model="formData.personality.Entertaining"
-                id="entertain">
+              <input class="magic-checkbox" type="checkbox" name="personality" value="Entertaining" ng-model="formData.personality.Entertaining" id="entertain">
               <label class="text" for="entertain">
                         Entertaining
                             </label>
             </div>
             <div class="magic-resize">
-              <input class="magic-checkbox" type="checkbox" name="personality" value="Imaginative" ng-model="formData.personality.Imaginative"
-                id="imagine">
+              <input class="magic-checkbox" type="checkbox" name="personality" value="Imaginative" ng-model="formData.personality.Imaginative" id="imagine">
               <label class="text" for="imagine">
                        Imaginative
                             </label>
             </div>
             <div class="magic-resize">
-              <input class="magic-checkbox" type="checkbox" name="personality" value="Artistic" ng-model="formData.personality.Artistic"
-                id="art">
+              <input class="magic-checkbox" type="checkbox" name="personality" value="Artistic" ng-model="formData.personality.Artistic" id="art">
               <label class="text" for="art">
                         Artistic
                             </label>
             </div>
             <div class="magic-resize">
-              <input class="magic-checkbox" type="checkbox" name="personality" value="Truthful" ng-model="formData.personality.Truthful"
-                id="truth">
+              <input class="magic-checkbox" type="checkbox" name="personality" value="Truthful" ng-model="formData.personality.Truthful" id="truth">
               <label class="text" for="truth">
                      Truthful
                             </label>
             </div>
             <div class="magic-resize">
-              <input class="magic-checkbox" type="checkbox" name="personality" value="Mischievous" ng-model="formData.personality.Mischievous"
-                id="mischief">
+              <input class="magic-checkbox" type="checkbox" name="personality" value="Mischievous" ng-model="formData.personality.Mischievous" id="mischief">
               <label class="text" for="mischief">
                       Mischievous
                             </label>
             </div>
             <div class="magic-resize">
-              <input class="magic-checkbox" type="checkbox" name="personality" value="Ambitious" ng-model="formData.personality.Ambitious"
-                id="ambition">
+              <input class="magic-checkbox" type="checkbox" name="personality" value="Ambitious" ng-model="formData.personality.Ambitious" id="ambition">
               <label class="text" for="ambition">
                       Ambitious
                             </label>
             </div>
             <div class="magic-resize">
-              <input class="magic-checkbox" type="checkbox" name="personality" value="Helpful" ng-model="formData.personality.Helpful"
-                id="help">
+              <input class="magic-checkbox" type="checkbox" name="personality" value="Helpful" ng-model="formData.personality.Helpful" id="help">
               <label class="text" for="help">
                      Helpful
                             </label>
             </div>
             <div class="magic-resize">
-              <input class="magic-checkbox" type="checkbox" name="personality" value="Innovative" ng-model="formData.personality.Innovative"
-                id="innovate">
+              <input class="magic-checkbox" type="checkbox" name="personality" value="Innovative" ng-model="formData.personality.Innovative" id="innovate">
               <label class="text" for="innovate">
                      Innovative
                             </label>
             </div>
             <div class="magic-resize">
-              <input class="magic-checkbox" type="checkbox" name="personality" value="Functional" ng-model="formData.personality.Functional"
-                id="function">
+              <input class="magic-checkbox" type="checkbox" name="personality" value="Functional" ng-model="formData.personality.Functional" id="function">
               <label class="text" for="function">
                     Functional
                             </label>
             </div>
             <div class="magic-resize">
-              <input class="magic-checkbox" type="checkbox" name="personality" value="Thoughtful" ng-model="formData.personality.Thoughtful"
-                id="thought">
+              <input class="magic-checkbox" type="checkbox" name="personality" value="Thoughtful" ng-model="formData.personality.Thoughtful" id="thought">
               <label class="text" for="thought">
                   Thoughtful
                             </label>
@@ -298,36 +298,31 @@
                             </label>
             </div>
             <div class="magic-resize">
-              <input class="magic-checkbox" type="checkbox" name="personality" value="Rebellious" ng-model="formData.personality.Rebellious"
-                id="rebel">
+              <input class="magic-checkbox" type="checkbox" name="personality" value="Rebellious" ng-model="formData.personality.Rebellious" id="rebel">
               <label class="text" for="rebel">
                  Rebellious
                             </label>
             </div>
             <div class="magic-resize">
-              <input class="magic-checkbox" type="checkbox" name="personality" value="Liberating" ng-model="formData.personality.Liberating"
-                id="libertae">
+              <input class="magic-checkbox" type="checkbox" name="personality" value="Liberating" ng-model="formData.personality.Liberating" id="libertae">
               <label class="text" for="libertae">
                Liberating
                             </label>
             </div>
             <div class="magic-resize">
-              <input class="magic-checkbox" type="checkbox" name="personality" value="Romantic" ng-model="formData.personality.Romantic"
-                id="romance">
+              <input class="magic-checkbox" type="checkbox" name="personality" value="Romantic" ng-model="formData.personality.Romantic" id="romance">
               <label class="text" for="romance">
              Romantic
                             </label>
             </div>
             <div class="magic-resize">
-              <input class="magic-checkbox" type="checkbox" name="personality" value="Enthusiastic" ng-model="formData.personality.Enthusiastic"
-                id="enthu">
+              <input class="magic-checkbox" type="checkbox" name="personality" value="Enthusiastic" ng-model="formData.personality.Enthusiastic" id="enthu">
               <label class="text" for="enthu">
              Enthusiastic
                             </label>
             </div>
             <div class="magic-resize">
-              <input class="magic-checkbox" type="checkbox" name="personality" value="Intimate" ng-model="formData.personality.Intimate"
-                id="intim">
+              <input class="magic-checkbox" type="checkbox" name="personality" value="Intimate" ng-model="formData.personality.Intimate" id="intim">
               <label class="text" for="intim">
            Intimate
                             </label>
@@ -713,7 +708,7 @@
       </div>
       <div class="col-md-1"></div>
       <div class="col-md-5">
-        <label>What do you want your customers to feel when interacting with the Brand? (Again,pick as many as you think apply)</label>
+        <label>What do you want your customers to feel when interacting with the Brand? (Again, pick as many as you think apply)</label>
         <div class="magic-form">
           <div class="magic-resize">
             <input class="magic-checkbox" type="checkbox" id="Happiness" value="Happinesss" name="interacting" ng-model="formData.interacting.Happinesss">
@@ -789,13 +784,14 @@
                            Satisfaction
                             </label>
           </div>
-          <div class="magic-resize">
+          <!--<div class="magic-resize">
             <input class="magic-checkbox" type="checkbox" id="interother" value="interactsoher" name="interactother" ng-model="formData.interactother.interactsoher">
             <label class="labewidtxt" for="interother">
                                Other:
                             </label>
-          </div>
-          <input type="text" class="form-control textbox-other" placeholder="Please mention other" ng-if="formData.interactother.interactsoher">
+          </div>-->
+          <p class="other-label">Other or if you want to elaborate:</p>
+          <input type="text" class="form-control textbox-other" placeholder="">
         </div>
       </div>
       <div class="col-md-1"></div>
@@ -813,87 +809,81 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-md-6">
+      <div class="col-md-12">
         <label>What type of logo(s) do you prefer for the Brand?</label>
         <div class="magic-form">
           <div class="magic-resize">
             <input class="magic-checkbox" type="checkbox" id="Icon" value="Icons" name="logo" ng-model="formData.logo.Icons">
-            <label class="text" for="Icon">
-                            Symbol/Icon
-                            </label>
+            <label class="text" for="Icon"> Symbol/Icon </label>
+            <div class="img-holder-1"><img src="img/" alt="" class="img-responsive"></div>
+            <div class="img-holder-2"><img src="img/" alt="" class="img-responsive"></div>
           </div>
           <div class="magic-resize">
             <input class="magic-checkbox" type="checkbox" id="Word" value="Words" name="logo" ng-model="formData.logo.Words">
-            <label class="text" for="Word">
-                         Word Mark
-                            </label>
+            <label class="text" for="Word">Word Mark</label>
+            <div class="img-holder-1"><img src="img/" alt="" class="img-responsive"></div>
+            <div class="img-holder-2"><img src="img/" alt="" class="img-responsive"></div>
           </div>
           <div class="magic-resize">
             <input class="magic-checkbox" type="checkbox" id="Letter" value="Letters" name="logo" ng-model="formData.logo.Letters">
-            <label class="text" for="Letter">
-                       Letter Mark
-                            </label>
+            <label class="text" for="Letter">  Letter Mark</label>
+            <div class="img-holder-1"><img src="img/" alt="" class="img-responsive"></div>
+            <div class="img-holder-2"><img src="img/" alt="" class="img-responsive"></div>
           </div>
           <div class="magic-resize">
             <input class="magic-checkbox" type="checkbox" id="Combination" value="Combinations" name="logo" ng-model="formData.logo.Combinations">
-            <label class="text" for="Combination">
-                          
-Combination Mark
-                            </label>
+            <label class="text" for="Combination">Combination Mark</label>
+            <div class="img-holder-1"><img src="img/" alt="" class="img-responsive"></div>
+            <div class="img-holder-2"><img src="img/" alt="" class="img-responsive"></div>
           </div>
           <div class="magic-resize">
             <input class="magic-checkbox" type="checkbox" id="Emblem" value="Emblems" name="logo" ng-model="formData.logo.Emblems">
-            <label class="text" for="Emblem">
-                            
-Emblem
-                            </label>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-6">
-        <label>What font(s) do you prefer for the Brand?</label>
-        <div class="magic-form">
-          <div class="magic-resize">
-            <input class="magic-checkbox" type="checkbox" id="Classic" value="Classics" name="prefer" ng-model="formData.prefer.Classics">
-            <label class="text" for="Classic">
-                           Classic
-                            </label>
-          </div>
-          <div class="magic-resize">
-            <input class="magic-checkbox" type="checkbox" id="Modern" value="Moderns" name="prefer" ng-model="formData.prefer.Moderns">
-            <label class="text" for="Modern">
-                       Modern
-                            </label>
-          </div>
-          <div class="magic-resize">
-            <input class="magic-checkbox" type="checkbox" id="Script" value="Scripts" name="prefer" ng-model="formData.prefer.Scripts">
-            <label class="text" for="Script">
-                         Script
-                            </label>
-          </div>
-          <div class="magic-resize">
-            <input class="magic-checkbox" type="checkbox" id="Hand" value="Hands" name="prefer" ng-model="formData.prefer.Hands">
-            <label class="text" for="Hand">
-                           Hand Written
-                            </label>
-          </div>
-          <div class="magic-resize">
-            <input class="magic-checkbox" type="checkbox" id="Bold" value="Bolds" name="prefer" ng-model="formData.prefer.Bolds">
-            <label class="text" for="Bold">
-                            
-Bold
-                            </label>
-          </div>
-          <div class="magic-resize">
-            <input class="magic-checkbox" type="checkbox" id="Customised" value="Customiseds" name="prefer" ng-model="formData.prefer.Customiseds">
-            <label class="text" for="Customised">
-                            
-Customised
-                            </label>
+            <label class="text" for="Emblem">Emblem </label>
+            <div class="img-holder-1"><img src="img/" alt="" class="img-responsive"></div>
+            <div class="img-holder-2"><img src="img/" alt="" class="img-responsive"></div>
           </div>
         </div>
       </div>
     </div>
+    <div class="row">
+      <div class="col-md-12">
+        <label>What font(s) do you prefer for the Brand?</label>
+        <div class="magic-form">
+          <div class="magic-resize">
+            <input class="magic-checkbox" type="checkbox" id="Classic" value="Classics" name="prefer" ng-model="formData.prefer.Classics">
+            <label class="text" for="Classic">Classic </label>
+            <div class="img-holder"><img src="img/font1.png" class="img-responsive" alt=""></div>
+          </div>
+          <div class="magic-resize">
+            <input class="magic-checkbox" type="checkbox" id="Modern" value="Moderns" name="prefer" ng-model="formData.prefer.Moderns">
+            <label class="text" for="Modern"> Modern</label>
+            <div class="img-holder"><img src="img/font2.png" class="img-responsive" alt=""></div>
+          </div>
+          <div class="magic-resize">
+            <input class="magic-checkbox" type="checkbox" id="Script" value="Scripts" name="prefer" ng-model="formData.prefer.Scripts">
+            <label class="text" for="Script">Script </label>
+            <div class="img-holder"><img src="img/font3.png" class="img-responsive" alt=""></div>
+          </div>
+          <div class="magic-resize">
+            <input class="magic-checkbox" type="checkbox" id="Hand" value="Hands" name="prefer" ng-model="formData.prefer.Hands">
+            <label class="text" for="Hand"> Hand Written</label>
+            <div class="img-holder"><img src="img/font4.png" class="img-responsive" alt=""></div>
+          </div>
+          <div class="magic-resize">
+            <input class="magic-checkbox" type="checkbox" id="Bold" value="Bolds" name="prefer" ng-model="formData.prefer.Bolds">
+            <label class="text" for="Bold">Bold</label>
+            <div class="img-holder"><img src="img/font5.png" class="img-responsive" alt=""></div>
+          </div>
+          <div class="magic-resize">
+            <input class="magic-checkbox" type="checkbox" id="Customised" value="Customiseds" name="prefer" ng-model="formData.prefer.Customiseds">
+            <label class="text" for="Customised">Customised </label>
+            <div class="img-holder"><img src="img/font6.png" class="img-responsive" alt=""></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
     <div class="row">
       <div class="col-md-6">
         <div class="form-group">
@@ -942,18 +932,18 @@ Customised
           </div>
           <div class="magic-resize">
             <input class="magic-checkbox" type="checkbox" id="Mobile" value="Mobiles" name="intention" ng-model="formData.intention.Mobiles">
-            <label class="text" for="Mobile">
-                            
-Mobile
+            <label class="text" for="Mobile">              
+                               Mobile
                             </label>
           </div>
-          <div class="magic-resize">
+          <!--<div class="magic-resize">
             <input class="magic-checkbox" type="checkbox" id="brandoh" value="othr" name="brandothers" ng-model="formData.brandothers.othr">
             <label class="labewidtxt" for="brandoh">
                                Other:
                             </label>
-          </div>
-          <input type="text" class="form-control textbox-other" placeholder="Please mention other" ng-if="formData.brandothers.othr">
+          </div>-->
+          <p class="other-label">Other or if you want to elaborate:</p>
+          <input type="text" class="form-control textbox-other" placeholder="">
         </div>
       </div>
       <div class="col-md-6">
@@ -968,14 +958,14 @@ Mobile
     <div class="magic-form text-center">
       <div class="magic-resize termobile">
         <input class="magic-checkbox" type="checkbox" id="terms" name="terms" value="true" required ng-model="formData.termsConditions">
-        <label class="text text-left" for="terms">
+        <!--<label class="text text-left" for="terms">
                I have read and accept the&nbsp;<u>Terms &amp; Conditions</u>
-            </label>
+            </label>-->
       </div>
     </div>
 
-    <div class="form-group text-center">
-      <button type="submit" class="btn btn-primary butn btn-lg sub-btn" ng-disabled="brandForm.$invalid"> <span ng-if="brandForm.$invalid">Please Enter Compulsory fields</span> <span ng-if="!brandForm.$invalid">Submit</span></button>
+    <div class="form-group text-center final-btn">
+      <button type="submit" class="btn btn-primary butn btn-lg sub-btn" ng-disabled="brandForm.$invalid"> <span ng-if="brandForm.$invalid">Please Enter Mandatory Fields</span> <span ng-if="!brandForm.$invalid">Submit</span></button>
 
 
     </div>
