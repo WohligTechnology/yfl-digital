@@ -4,11 +4,11 @@
         <h4>Getting Started</h4>
         <hr>
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-12">
                 <div class="row">
                     <div class="col-md-4">
                         <div class="form-group">
-                            <label>First Name*</label>
+                            <label>First Name</label>
                             <input type="text" name="firstName" ng-model="formData.firstName" class="form-control" required aplha-only>
                             <div class="error-msg" ng-if="webForm.firstName.$invalid && webForm.firstName.$touched">Please Enter Your First Name</div>
                         </div>
@@ -21,14 +21,16 @@
                     </div>
                     <div class="col-md-4">
                         <div class="form-group">
-                            <label>Last Name*</label>
+                            <label>Last Name</label>
                             <input type="text" name="lastName" ng-model="formData.lastName" class="form-control" required aplha-only>
                             <div class="error-msg" ng-if="webForm.lastName.$invalid && webForm.lastName.$touched">Please Enter Your Last Name</div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-md-6">
+        </div>
+        <div class="row">
+            <div class="col-md-12">
                 <div class="form-group">
                     <label>Company Name</label>
                     <input type="text" name="companyName" ng-model="formData.companyName" class="form-control" required aplha-only>
@@ -69,25 +71,29 @@
                     <label>What is it that you require? If it’s a mobile app or social media, please share specific requirements.</label>
                     <div class="magic-form">
                         <div class="magic-resize">
-                            <input class="magic-checkbox" type="checkbox" name="requirement" value="mobileApp" ng-model="formData.requirement.mobileApp" id="app">
+                            <input class="magic-checkbox" type="checkbox" name="requirement" value="mobileApp" ng-model="formData.requirement.mobileApp"
+                                id="app">
                             <label class="text" for="app">
                                 Mobile App
                             </label>
                         </div>
                         <div class="magic-resize">
-                            <input class="magic-checkbox" type="checkbox" name="requirement" value="mediaInt" ng-model="formData.requirement.mediaInt" id="Media">
+                            <input class="magic-checkbox" type="checkbox" name="requirement" value="mediaInt" ng-model="formData.requirement.mediaInt"
+                                id="Media">
                             <label class="text" for="Media">
                                Social Medial Integration
                             </label>
                         </div>
                         <div class="magic-resize">
-                            <input class="magic-checkbox" type="checkbox" name="requirement" value="websitedesign" ng-model="formData.requirement.websitedesign" id="design">
+                            <input class="magic-checkbox" type="checkbox" name="requirement" value="websitedesign" ng-model="formData.requirement.websitedesign"
+                                id="design">
                             <label class="text" for="design">
                               Website Design
                             </label>
                         </div>
                         <div class="magic-resize">
-                            <input class="magic-checkbox" type="checkbox" name="requirement" value="websitecoding" ng-model="formData.requirement.websitecoding" id="coding">
+                            <input class="magic-checkbox" type="checkbox" name="requirement" value="websitecoding" ng-model="formData.requirement.websitecoding"
+                                id="coding">
                             <label class="text" for="coding">
                                 Website Coding
                             </label>
@@ -178,7 +184,7 @@
             </div>
             <div class="col-md-6">
                 <div class="form-group">
-                    <label>If you are using existing copy on your current website, will it need to be modified in any way?</label>
+                    <label> If you are using existing copy on your current website, will it need to be modified in any way?</label>
                     <div class="magic-form">
                         <div class="magic-resize">
                             <input class="magic-radio" type="radio" name="modified" id="3" value="true" ng-model="formData.modified">
@@ -355,7 +361,7 @@
                             </label>
                     </div>-->
                     <p class="other-label">Other or if you want to elaborate:</p>
-                    <input type="text" class="form-control textbox-other box-space" placeholder="">
+                    <input type="text" class="form-control textbox-other box-space" placeholder="PLease mention other">
                 </div>
 
 
@@ -786,7 +792,7 @@
         </div>
         <div class="row">
             <div class="col-md-12">
-                <label>Would you like a more “corporate” (template based) site such as <a href="">avasara.in</a> or a more experimental site where almost all pages have a different feel, such as <a href="">wrap.co.in</a>?</label>
+                <label>Would you like a more “corporate” (template based) site such as <a href="avasara.in">avasara.in</a> or a more experimental site where almost all pages have a different feel, such as <a href="wrap.co.in">wrap.co.in</a>?</label>
                 <div class="magic-form">
                     <div class="magic-resize">
                         <input class="magic-radio" type="radio" name="sitetypes" id=" Corporate" value="true" ng-model="formData.sitetypes">

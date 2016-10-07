@@ -232,6 +232,7 @@ a {
     h3 {
         font-weight: 200;
         margin: 50px 0 10px;
+        font-size: 22px;
     }
 }
 
@@ -564,7 +565,7 @@ fieldset[disabled] .btn-primary.focus {
 }
 
 .textbox-other {
-    width: 60%;
+    // width: 60%;
     border: none;
     border-bottom: 1px solid #D0D0D0;
 }
@@ -638,6 +639,16 @@ fieldset[disabled] .btn-primary.focus {
 
 .mt25 {
     margin-top: 25px;
+}
+
+.magic-resize {
+    img {
+        width: 30%;
+        display: inline-block;
+    }
+    img+img {
+        margin-left: 20px;
+    }
 }
 
 @import "_fancybox-override";

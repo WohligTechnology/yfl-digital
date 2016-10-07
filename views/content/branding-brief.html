@@ -43,26 +43,24 @@
           <label>Does your brand have a name?</label>
           <div class="magic-form">
             <div class="magic-resize">
-              <input class="magic-radio" type="radio" name="demos" id="ya" value="true" ng-model="formData.demos">
+              <input class="magic-radio" type="radio" name="demos" id="ya" value="true" ng-model="formData.demos" ng-click="showpopup('y')">
               <label class="text" for="ya">
                         Yes
                      </label>
             </div>
             <div class="magic-resize">
-              <input class="magic-radio" type="radio" name="demos" id="na" value="false" ng-model="formData.demos">
+              <input class="magic-radio" type="radio" name="demos" id="na" value="false" ng-model="formData.demos" ng-click="showpopup('n')">
               <label class="text" for="na">
                         No
                      </label>
             </div>
-            <!--<div class="magic-resize">
-              <input class="magic-radio" type="radio" name="demos" id="rother" value="none" ng-model="formData.demos">
-              <label class="text" for="rother">
-                        other
-                     </label>
-            </div>
-            <input ng-model="formData.demos" type="text" class="form-control textbox-other" placeholder="Please mention other" ng-if="formData.demos.none">-->
           </div>
+          <div class="conditional-fields" ng-show="popup2">
+            <div class="magic-form">
+              <input type="text" class="form-control textbox-other" placeholder="Please enter your brand name. (If multiple options, please separate with a comma)">
+            </div>
 
+          </div>
         </div>
       </div>
       <div class="col-md-6">
@@ -837,24 +835,32 @@
         <label>What type of logo(s) do you prefer for the Brand?</label>
         <div class="magic-form">
           <div class="magic-resize">
+            <img src="img/shell.png" class="img-responsive" alt="brands">
+            <img src="img/mozila.png" class="img-responsive" alt="brands">
             <input class="magic-checkbox" type="checkbox" id="Icon" value="Icons" name="logo" ng-model="formData.logo.Icons">
             <label class="text" for="Icon">
                             Symbol/Icon
                             </label>
           </div>
           <div class="magic-resize">
+            <img src="img/facebook.png" class="img-responsive" alt="brands">
+            <img src="img/patriot.png" class="img-responsive" alt="brands">
             <input class="magic-checkbox" type="checkbox" id="Word" value="Words" name="logo" ng-model="formData.logo.Words">
             <label class="text" for="Word">
                          Word Mark
                             </label>
           </div>
           <div class="magic-resize">
+            <img src="img/chanel.png" class="img-responsive" alt="brands">
+            <img src="img/louis.png" class="img-responsive" alt="brands">
             <input class="magic-checkbox" type="checkbox" id="Letter" value="Letters" name="logo" ng-model="formData.logo.Letters">
             <label class="text" for="Letter">
                        Letter Mark
                             </label>
           </div>
           <div class="magic-resize">
+            <img src="img/airlines.png" class="img-responsive" alt="brands">
+            <img src="img/unilever.jpg" class="img-responsive" alt="brands">
             <input class="magic-checkbox" type="checkbox" id="Combination" value="Combinations" name="logo" ng-model="formData.logo.Combinations">
             <label class="text" for="Combination">
                           
@@ -862,6 +868,8 @@ Combination Mark
                             </label>
           </div>
           <div class="magic-resize">
+            <img src="img/starbucks.png" class="img-responsive" alt="brands">
+            <img src="img/bmw.png" class="img-responsive" alt="brands">
             <input class="magic-checkbox" type="checkbox" id="Emblem" value="Emblems" name="logo" ng-model="formData.logo.Emblems">
             <label class="text" for="Emblem">
                             
@@ -874,30 +882,35 @@ Emblem
         <label>What font(s) do you prefer for the Brand?</label>
         <div class="magic-form">
           <div class="magic-resize">
+            <img src="img/font1.png" class="img-responsive" alt="brands">
             <input class="magic-checkbox" type="checkbox" id="Classic" value="Classics" name="prefer" ng-model="formData.prefer.Classics">
             <label class="text" for="Classic">
                            Classic
                             </label>
           </div>
           <div class="magic-resize">
+            <img src="img/font2.png" class="img-responsive" alt="brands">
             <input class="magic-checkbox" type="checkbox" id="Modern" value="Moderns" name="prefer" ng-model="formData.prefer.Moderns">
             <label class="text" for="Modern">
                        Modern
                             </label>
           </div>
           <div class="magic-resize">
+            <img src="img/font3.png" class="img-responsive" alt="brands">
             <input class="magic-checkbox" type="checkbox" id="Script" value="Scripts" name="prefer" ng-model="formData.prefer.Scripts">
             <label class="text" for="Script">
                          Script
                             </label>
           </div>
           <div class="magic-resize">
+            <img src="img/font4.png" class="img-responsive" alt="brands">
             <input class="magic-checkbox" type="checkbox" id="Hand" value="Hands" name="prefer" ng-model="formData.prefer.Hands">
             <label class="text" for="Hand">
                            Hand Written
                             </label>
           </div>
           <div class="magic-resize">
+            <img src="img/font5.png" class="img-responsive" alt="brands">
             <input class="magic-checkbox" type="checkbox" id="Bold" value="Bolds" name="prefer" ng-model="formData.prefer.Bolds">
             <label class="text" for="Bold">
                             
@@ -905,6 +918,7 @@ Bold
                             </label>
           </div>
           <div class="magic-resize">
+            <img src="img/font6.png" class="img-responsive" alt="brands">
             <input class="magic-checkbox" type="checkbox" id="Customised" value="Customiseds" name="prefer" ng-model="formData.prefer.Customiseds">
             <label class="text" for="Customised">
                             

@@ -35,6 +35,12 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.navigation = NavigationService.getnav();
 
 
+        $scope.popup = false;
+        $scope.popup2 = false;
+        $scope.showpopup = function (value) {
+            $scope.popup = value == "y";
+            $scope.popup2 = value == "y";
+        }
         $scope.textboxVal = false;
         $scope.showTextbox = function (value) {
                 $scope.textboxVal = value == "y";
