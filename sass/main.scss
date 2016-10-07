@@ -617,5 +617,24 @@ fieldset[disabled] .btn-primary.focus {
     width: 60%;
 }
 
+.magic-form {
+    .resizing {
+        width: 100%;
+        label {
+            margin: 0;
+        }
+    }
+}
+
+.forms {
+    .magic-form .magic-resize {
+        width: 49%;
+    }
+}
+
+.mt25 {
+    margin-top: 25px;
+}
+
 @import "_fancybox-override";
 @import "mobile";
