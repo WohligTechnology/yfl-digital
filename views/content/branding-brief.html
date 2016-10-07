@@ -1,5 +1,5 @@
 <div class="container main-form" ng-if="!formComplete">
-  <h3 class="text-center text-uppercase">Help us understand what your brand stands for and how you want to bring it to life.</h3>
+  <h3 class="text-center text-uppercase">'Help us understand what your brand stands for and how you want to bring it to life.'</h3>
   <form name="brandForm" class="mid-form" ng-submit="submitBrandForm(formData)" ng-if="!formComplete">
     <h4>Basic Information</h4>
     <hr>
@@ -8,21 +8,21 @@
         <div class="form-group">
           <label> First Name</label>
           <input type="text" name="firstName" ng-model="formData.firstName" class="form-control" required aplha-only>
-          <div class="error-msg" ng-if="brandForm.firstName.$invalid && brandForm.firstName.$touched">Please Enter Your Name</div>
+          <div class="error-msg" ng-if="brandForm.firstName.$invalid && brandForm.firstName.$touched">Please Enter Your First Name</div>
         </div>
       </div>
       <div class="col-md-4">
         <div class="form-group">
           <label> Middle Name</label>
-          <input type="text" name="firstName" ng-model="formData.firstName" class="form-control" required aplha-only>
-          <div class="error-msg" ng-if="brandForm.firstName.$invalid && brandForm.firstName.$touched">Please Enter Your Name</div>
+          <input type="text" name="middleName" ng-model="formData.middleName" class="form-control" required aplha-only>
+          <div class="error-msg" ng-if="brandForm.middleName.$invalid && brandForm.middleName.$touched">Please Enter Your Middle Name</div>
         </div>
       </div>
       <div class="col-md-4">
         <div class="form-group">
           <label>Last Name</label>
-          <input type="text" name="firstName" ng-model="formData.firstName" class="form-control" required aplha-only>
-          <div class="error-msg" ng-if="brandForm.firstName.$invalid && brandForm.firstName.$touched">Please Enter Your Name</div>
+          <input type="text" name="lastName" ng-model="formData.lastName" class="form-control" required aplha-only>
+          <div class="error-msg" ng-if="brandForm.lastName.$invalid && brandForm.lastName.$touched">Please Enter Your Last Name</div>
         </div>
       </div>
     </div>

@@ -1,31 +1,28 @@
 <div class="container main-form" ng-if="!formComplete">
-    <h3 class="text-center text-uppercase">Help us understand what your website would represent and how you want to bring it to life</h3>
+    <h3 class="text-center text-uppercase">'Help us understand what your website would represent and how you want to bring it to life.'</h3>
     <form name="webForm" class="mid-form" ng-submit="submitWebForm(formData)" ng-if="!formComplete">
         <h4>Getting Started</h4>
         <hr>
         <div class="row">
-            <div class="col-md-12">
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="form-group">
-                            <label>First Name</label>
-                            <input type="text" name="firstName" ng-model="formData.firstName" class="form-control" required aplha-only>
-                            <div class="error-msg" ng-if="webForm.firstName.$invalid && webForm.firstName.$touched">Please Enter Your First Name</div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="form-group">
-                            <label>Middle Name</label>
-                            <input type="text" name="middleName" class="form-control" required aplha-only>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="form-group">
-                            <label>Last Name</label>
-                            <input type="text" name="lastName" ng-model="formData.lastName" class="form-control" required aplha-only>
-                            <div class="error-msg" ng-if="webForm.lastName.$invalid && webForm.lastName.$touched">Please Enter Your Last Name</div>
-                        </div>
-                    </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label> First Name</label>
+                    <input type="text" name="firstName" ng-model="formData.firstName" class="form-control" required aplha-only>
+                    <div class="error-msg" ng-if="webForm.firstName.$invalid && webForm.firstName.$touched">Please Enter Your First Name</div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label> Middle Name</label>
+                    <input type="text" name="middleName" ng-model="formData.middleName" class="form-control" required aplha-only>
+                    <div class="error-msg" ng-if="webForm.middleName.$invalid && webForm.middleName.$touched">Please Enter Your Middle Name</div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label>Last Name</label>
+                    <input type="text" name="lastName" ng-model="formData.lastName" class="form-control" required aplha-only>
+                    <div class="error-msg" ng-if="webForm.lastName.$invalid && webForm.lastName.$touched">Please Enter Your Last Name</div>
                 </div>
             </div>
         </div>
@@ -819,5 +816,7 @@
 
         </div>
     </form>
-
+    <div class="submit-thank" ng-if="formComplete">
+        <p class="text-center">Thank You</p>
+    </div>
 </div>
