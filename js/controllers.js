@@ -49,8 +49,8 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             // }
     })
     .controller('WebCtrl', function ($scope, TemplateService, NavigationService, $timeout) {
-        $scope.template = TemplateService.changecontent("form-webreq"); //Use same name of .html file
-        $scope.menutitle = NavigationService.makeactive("Form Web Requirement"); //This is the Title of the Website
+        $scope.template = TemplateService.changecontent("website-req"); //Use same name of .html file
+        $scope.menutitle = NavigationService.makeactive("Web Requirement"); //This is the Title of the Website
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
 
