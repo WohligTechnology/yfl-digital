@@ -565,8 +565,8 @@ fieldset[disabled] .btn-primary.focus {
 
 .textbox-other {
     width: 60%;
-    // border: none;
-    // border-bottom: 1px solid #D0D0D0;
+    border: none;
+    border-bottom: 1px solid #D0D0D0;
 }
 
 .mleft {
@@ -617,8 +617,11 @@ fieldset[disabled] .btn-primary.focus {
     width: 60%;
 }
 
-.magic-form {
-    .resizing {
+.forms {
+    .magic-form .magic-resize {
+        width: 49%;
+    }
+    .magic-form .resizing {
         width: 100%;
         label {
             margin: 0;
@@ -626,9 +629,10 @@ fieldset[disabled] .btn-primary.focus {
     }
 }
 
-.forms {
-    .magic-form .magic-resize {
-        width: 49%;
+.magic-form .resizing {
+    width: 100%;
+    label {
+        margin: 0;
     }
 }
 
