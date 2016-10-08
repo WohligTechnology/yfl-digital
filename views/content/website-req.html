@@ -103,7 +103,7 @@
 
                         </div>-->
                         <p class="other-label">Other or if you want to elaborate:</p>
-                        <input type="text" class="form-control textbox-other" placeholder="">
+                        <input type="text" class="form-control textbox-other" placeholder="PLease mention other">
                     </div>
                 </div>
             </div>
@@ -371,13 +371,13 @@
                     <p class=explanation><i>If yes, will this be a custom blog for the site or a link to an existing blog? </i></p>
                     <div class="magic-form">
                         <div class="magic-resize">
-                            <input class="magic-radio" type="radio" name="demos" id="ya" value="true" ng-click="showpopup('y')">
+                            <input class="magic-radio" type="radio" name="demos" id="ya" value="true" ng-model="formData.demos" ng-click="showpopup('y')">
                             <label class="text" for="ya">
                         Yes
                      </label>
                         </div>
                         <div class="magic-resize">
-                            <input class="magic-radio" type="radio" name="demos" id="na" value="false" ng-click="showpopup('n')">
+                            <input class="magic-radio" type="radio" name="demos" id="na" value="false" ng-model="formData.demos" ng-click="showpopup('n')">
                             <label class="text" for="na">
                         No
                      </label>
@@ -404,13 +404,13 @@
 
                     <div class="magic-form">
                         <div class="magic-resize">
-                            <input class="magic-radio" type="radio" name="ecommerce" id="11" value="true" ng-model="formData.ecommerce" ng-click="showpopup('y')">
+                            <input class="magic-radio" type="radio" name="ecommerce" id="11" value="true" ng-model="formData.ecommerce" ng-click="showpopups('y')">
                             <label class="text" for="11">
                         Yes
                      </label>
                         </div>
                         <div class="magic-resize">
-                            <input class="magic-radio" type="radio" name="ecommerce" id="12" value="false" ng-model="formData.ecommerce" ng-click="showpopup('n')">
+                            <input class="magic-radio" type="radio" name="ecommerce" id="12" value="false" ng-model="formData.ecommerce" ng-click="showpopups('n')">
                             <label class="text" for="12">
                         No
                      </label>
@@ -419,11 +419,11 @@
                     <div class="conditional-fields" ng-show="popup2">
                         <div class="magic-form">
                             <div class="magic-resize">
-                                <input class="magic-radio" type="radio" name="demos" id="single" value="">
+                                <input class="magic-radio" type="radio" name="ecommerce" id="single" value="true">
                                 <label class="text" for="single"> Single currency</label>
                             </div>
                             <div class="magic-resize">
-                                <input class="magic-radio" type="radio" name="demos" id="multiple" value="">
+                                <input class="magic-radio" type="radio" name="ecommerce" id="multiple" value="false">
                                 <label class="text" for="multiple"> Multiple currency </label>
                             </div>
                         </div>
