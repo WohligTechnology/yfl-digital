@@ -223,10 +223,13 @@ a {
     position: relative;
 }
 
+.italic {
+    font-style: italic;
+}
+
 .main-form {
     h4 {
         font-family: Rubik, "Times New Roman", Times, serif;
-        font-weight: 400;
         margin-top: 20px;
     }
     h3 {
@@ -580,6 +583,10 @@ fieldset[disabled] .btn-primary.focus {
         font-weight: normal!important;
         font-family: $font-family-serif!important;
     }
+    h4 {
+        font-weight: 700!important;
+        font-style: italic;
+    }
 }
 
 .other-label {
@@ -643,7 +650,7 @@ fieldset[disabled] .btn-primary.focus {
 
 .magic-resize {
     img {
-        width: 30%;
+        width: 40%;
         display: inline-block;
     }
     img+img {
