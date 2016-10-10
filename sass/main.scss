@@ -235,7 +235,7 @@ a {
     h3 {
         font-weight: 200;
         margin: 30px 0 10px;
-        font-size: 18px;
+        font-size: 17px;
     }
     h2 {
         font-size: 20px;
@@ -243,7 +243,9 @@ a {
         color: #f8cb2a;
     }
 }
-
+.f12{
+  font-size: 12px;
+}
 .form-invalid {
     color: $brand-danger;
     .form-control {
@@ -533,39 +535,61 @@ fieldset[disabled] .btn-primary.focus {
     position: relative;
 }
 
-.butn {
-    background-color: #A51A1A;
-    border-radius: 5px;
-    border: none;
-    padding: 8px 80px;
-}
-
 .button-center {
     .form-group {
         display: inline-block;
         margin: 25px 15px 15px;
+    }
+    .butn {
+        background-color: rgb(100, 203, 201);
+        border-radius: 25px;
+        border: none;
+        padding: 8px 80px;
+        span {
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+    }
+    .submit {
+        background-color: rgba(255, 209, 0, 0.93);
+        &:hover {
+            background-color: rgba(255, 214, 0, 0.7);
+            border-color: rgba(255, 214, 0, 0.7);
+        }
+        &:focus {
+            background-color: rgb(255, 214, 0);
+            border-color: rgb(255, 214, 0);
+        }
+        &:active {
+            &:focus {
+                background-color: rgb(255, 214, 0);
+                border-color: rgb(255, 214, 0);
+            }
+        }
     }
 }
 
 .btn-primary {
     &:hover {
         color: #fff;
-        background-color: #590E0E;
-        border-color: #590E0E;
+        background-color: rgba(112, 255, 191, 0.67);
+        border-color: rgba(112, 255, 191, 0.67);
     }
     &:focus {
         color: #fff;
-        background-color: #590E0E;
-        border-color: #590E0E;
+        background-color: rgba(112, 255, 191, 0.67);
+        border-color: rgba(112, 255, 191, 0.67);
+        outline: 0;
     }
     &:active {
         color: #fff;
-        background-color: #590E0E;
-        border-color: #590E0E;
+        background-color: rgba(112, 255, 191, 0.67);
+        border-color: rgba(112, 255, 191, 0.67);
         &:focus {
             color: #fff;
-            background-color: #590E0E;
-            border-color: #590E0E;
+            background-color: rgba(112, 255, 191, 0.67);
+            border-color: rgba(112, 255, 191, 0.67);
+            outline: 0;
         }
     }
 }
@@ -597,7 +621,7 @@ fieldset[disabled] .btn-primary.focus {
     }
     h4 {
         font-weight: 700!important;
-        font-style: italic;
+        // font-style: italic;
     }
 }
 

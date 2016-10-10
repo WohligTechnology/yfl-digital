@@ -1,6 +1,7 @@
 <div class="container main-form" ng-if="!formComplete">
-    <h2 class="text-center italic">"Put your heart, mind, and soul into even your smallest acts. This is the secret of success." - Swami Sivananda</h2>
-    <h3 class="text-center italic">Help us understand what your website would represent and how you want to bring it to life.</h3>
+    <h2 class="text-center ">"Put your heart, mind, and soul into even your smallest acts. This is the secret of success." - Swami Sivananda</h2>
+    <h3 class="text-center ">Help us understand what your website would represent and how you want to bring it to life.</h3>
+<h4 class="text-center f12">Note:All questions must be answered, unless marked optional*</h4>
     <form name="webForm" class="mid-form" ng-submit="submitWebForm(formData)" ng-if="!formComplete">
         <h4>Getting Started</h4>
         <hr>
@@ -14,7 +15,7 @@
             </div>
             <div class="col-md-4">
                 <div class="form-group">
-                    <label> Middle Name</label>
+                    <label> Middle Name *</label>
                     <input type="text" name="middleName" ng-model="formData.middleName" class="form-control" required aplha-only>
                     <div class="error-msg" ng-if="webForm.middleName.$invalid && webForm.middleName.$touched">Please Enter Your Middle Name</div>
                 </div>
@@ -30,7 +31,7 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="form-group">
-                    <label>Company Name</label>
+                    <label>Company Name *</label>
                     <input type="text" name="companyName" ng-model="formData.companyName" class="form-control" required aplha-only>
                     <div class="error-msg" ng-if="webForm.companyName.$invalid && webForm.companyName.$touched">Please Enter Your Company Name</div>
                 </div>
@@ -55,7 +56,7 @@
             <div class="col-md-12">
                 <div class="form-group">
                     <label>Who is the primary audience for the website (demographics)?</label>
-                    <p class=explanation><i>Their professions, disciplines, age and interests? (If the target is a broad-based, international audience, with potentially slow modems, old browsers, this might limit the design options.)</i></p>
+                    <p class=explanation>Their professions, disciplines, age and interests? (If the target is a broad-based, international audience, with potentially slow modems, old browsers, this might limit the design options.)</p>
                     <input type="text" name="audience" ng-model="formData.audience" class="form-control">
                 </div>
             </div>
@@ -115,7 +116,7 @@
             <div class="col-md-6">
                 <div class="form-group">
                     <label>Do you need a website that can work smoothly on mobile devices like Samsung Galaxy (Android) and the iPhone (iOS)? This means the site has to be a ‘Responsive Design’ which adjusts dynamically to various screen sizes and resolutions.</label>
-                    <p class="label-note"><i>Please note that this usually means added time and considerable cost - 1.5-2x the cost, since we need to design a separate layout for this purpose.</i></p>
+                    <p class="label-note">Please note that this usually means added time and considerable cost - 1.5-2x the cost, since we need to design a separate layout for this purpose.</p>
 
                     <div class="magic-form">
                         <div class="magic-resize">
@@ -138,7 +139,7 @@
             <div class="col-md-6">
                 <div class="form-group">
                     <label>Do you need a catalogue for the site?</label>
-                    <p class="label-note"><i>A catalogue helps you display a range of products in an organized manner.</i></p>
+                    <p class="label-note">A catalogue helps you display a range of products in an organized manner.</p>
                     <div class="magic-form">
                         <div class="magic-resize">
                             <input class="magic-radio" type="radio" name="demonstrations" id="yess" value="true" ng-model="formData.demonstrations">
@@ -206,7 +207,7 @@
             <div class="col-md-6">
                 <div class="form-group">
                     <label>Do you need a web domain name and hosting for the website?</label>
-                    <p class="explanation"> <i>A domain name is the name of your website. You need to register for this. We can suggest some sites. Hosting needs depend on the sophistication of your site. We can discuss if you need assistance. </i></p>
+                    <p class="explanation">A domain name is the name of your website. You need to register for this. We can suggest some sites. Hosting needs depend on the sophistication of your site. We can discuss if you need assistance.</p>
                     <div class="magic-form">
                         <div class="magic-resize">
                             <input class="magic-radio" type="radio" name="domain" id="5" value="true" ng-model="formData.domain">
@@ -229,13 +230,12 @@
                 <div class="form-group">
                     <label>Would you like a Static or Dynamic website?</label>
                     <p class="explanation">
-                        <i> Static Site : <br> A site where one only focuses on how it looks on the internet. There is no ability to modify content and the developer is required to make the slightest change These are cheaper & faster to develop. Running costs
+                        Static Site : <br> A site where one only focuses on how it looks on the internet. There is no ability to modify content and the developer is required to make the slightest change These are cheaper & faster to develop. Running costs
                         are also low as there is no database or back-end programming required. <br> Static sites are good for you if you don't make too many updates to your site — less than one update in 3-4 months. To go from a static to a dynamic site
                         would be considered working from scratch. Static sites are cheaper in the short-run, however, for the long-term we recommend Dynamic sites. <br><br> Dynamic Site: <br> A site where the client can make changes (within some agreed
                         parameters). How much change and extent of change depends on the requirements, cost & time. Highly flexible and can support dynamic features like user Login, database etc. The dynamic nature implies heavier cost in terms of development,
                         running costs and maintenance. <br> Dynamic sites are of different grades also. (Discussion required) We recommend dynamic sites over static sites especially if you make more than one update every 3-4 months. A dynamic site gives
                         you control on your content. Additionally, more features and upgrades are possible on a dynamic site.
-                    </i>
                     </p>
                     <div class="magic-form">
                         <div class="magic-resize">
@@ -369,7 +369,7 @@
             <div class="col-md-6">
                 <div class="form-group">
                     <label>Would your website have a blog?</label>
-                    <p class=explanation><i>If yes, will this be a custom blog for the site or a link to an existing blog? </i></p>
+                    <p class=explanation>If yes, will this be a custom blog for the site or a link to an existing blog?</p>
                     <div class="magic-form">
                         <div class="magic-resize">
                             <input class="magic-radio" type="radio" name="demos" id="ya" value="true" ng-model="formData.demos" ng-click="showpopup('y')">
@@ -483,13 +483,13 @@
             <div class="col-md-6">
                 <div class="form-group">
                     <label>Ideally if you could, please send us a sitemap of the website.</label>
-                    <p class=explanation><i>A sitemap is basically a list of all the pages in the website, listed hierarchically.</i></p>
+                    <p class=explanation>A sitemap is basically a list of all the pages in the website, listed hierarchically.</p>
                     <input type="text" name="ideally" ng-model="formData.ideally" class="form-control">
                 </div>
             </div>
             <div class="col-md-6">
                 <label>Would you like your work/products to be professionally shot?</label>
-                <p class=explanation><i>We offer photography services or you can have it done at your end, but please ensure professional quality of photographs since it can really impact the website.</i></p>
+                <p class=explanation>We offer photography services or you can have it done at your end, but please ensure professional quality of photographs since it can really impact the website.</p>
                 <div class="magic-form">
                     <div class="magic-resize">
                         <input class="magic-radio" type="radio" name="products" id="17" value="true" ng-model="formData.products">
@@ -510,7 +510,7 @@
         <div class="row">
             <div class="col-md-6">
                 <label>How will you attract visitors to your site? Are you looking for Search Engine Optimisation/Google rankings (SEO)?</label>
-                <p class=explanation><i> Add explanatory text below this question - The best way to do this is through Search Engine Optimisation, which enable users to find your site easier through Google, just as you found us. Costs are based on the level of optimisation you need. We also provide Google Analytics (GA) for you to analyse the profile of the visitors to your site as well as what aspect they are interested in. We provide GA on a page or site level. Page level is recommended for more detailed information.</i></p>
+                <p class=explanation>Add explanatory text below this question - The best way to do this is through Search Engine Optimisation, which enable users to find your site easier through Google, just as you found us. Costs are based on the level of optimisation you need. We also provide Google Analytics (GA) for you to analyse the profile of the visitors to your site as well as what aspect they are interested in. We provide GA on a page or site level. Page level is recommended for more detailed information.</p>
                 <div class="magic-form">
                     <div class="magic-resize">
                         <input class="magic-radio" type="radio" name="attract" id="19" value="true" ng-model="formData.attract">
@@ -589,7 +589,7 @@
         <div class="row">
             <div class="col-md-12">
                 <label>What kind of content do you plan to update?</label>
-                <p class=explanation><i>Select any of the following and please add anything that is not in the list.</i></p>
+                <p class=explanation>Select any of the following and please add anything that is not in the list.</p>
                 <div class="magic-form">
                     <div class="magic-resize">
                         <input class="magic-checkbox" type="checkbox" name="format" value="simpleformat" id="updation" ng-model="formData.format.simpleformat">
@@ -635,7 +635,7 @@
         <div class="row">
             <div class="col-md-6">
                 <label>Do you intend to have any financial transactions online now or in the near future? If so, would you like an e-commerce capability on your website?</label>
-                <p class=explanation><i>This enables you to accept credit card and pay pal transactions on your site. Please be aware that due to the paperwork involved it could take up to 2-3 months to activate this feature so we should start with the paperwork as soon as we start the design.</i></p>
+                <p class=explanation>This enables you to accept credit card and pay pal transactions on your site. Please be aware that due to the paperwork involved it could take up to 2-3 months to activate this feature so we should start with the paperwork as soon as we start the design.</p>
                 <div class="magic-form">
                     <div class="magic-resize">
                         <input class="magic-radio" type="radio" name="transaction" id="25" value="true" ng-model="formData.transaction">
@@ -710,7 +710,7 @@
             </div>
             <div class="col-md-6">
                 <label>All sites are built for English audiences, do you wish additional languages?</label>
-                <p class=explanation><i>The cost of a multi-lingual site is much higher. Please specify the languages.</i></p>
+                <p class=explanation>The cost of a multi-lingual site is much higher. Please specify the languages.</p>
                 <div class="magic-form">
                     <div class="magic-resize">
                         <input class="magic-radio" type="radio" name="language" id="31" value="true" ng-model="formData.language">
@@ -732,7 +732,7 @@
             <div class="col-md-12">
                 <div class="form-group">
                     <label> What is the tone of the website?</label>
-                    <p class=explanation><i>Please use 2-5 adjectives. For instance, is it happy, playful, exciting etc? Please use  single words only. No phrases.</i></p>
+                    <p class=explanation>Please use 2-5 adjectives. For instance, is it happy, playful, exciting etc? Please use  single words only. No phrases.</p>
                     <input type="text" class="form-control" name="tone" ng-model="formData.tone">
                 </div>
             </div>
@@ -767,7 +767,7 @@
                 <div class="form-group">
                     <label> Site no no’s: Do you have any definite remarks on what you don’t want to have on your website?
 </label>
-                    <p class=explanation><i>For instance, the color pink. Sharing why you don’t want a feature will help us get an understanding of your user experience tastes, so feel free to elaborate.</i></p>
+                    <p class=explanation>For instance, the color pink. Sharing why you don’t want a feature will help us get an understanding of your user experience tastes, so feel free to elaborate.</p>
                     <input type="text" class="form-control" name="remarks" ng-model="formData.remarks">
                 </div>
             </div>
@@ -783,7 +783,7 @@
             <div class="col-md-6">
                 <div class="form-group">
                     <label> Competitors: are there any websites that you would consider your “competition”?</label>
-                    <p class=explanation><i>Feel free to provide more information on how they are your “competition”, but, at minimum, provide for each competitor, include the company name, web address, and a list of “key terms” that describe what they do and/or sell.</i></p>
+                    <p class=explanation>Feel free to provide more information on how they are your “competition”, but, at minimum, provide for each competitor, include the company name, web address, and a list of “key terms” that describe what they do and/or sell.</p>
                     <input type="text" name="competition" class="form-control" ng-model="formData.competition">
                 </div>
             </div>
@@ -819,7 +819,7 @@
             </div>
 
             <div class="form-group text-center mt25 ">
-                <button class="btn btn-primary butn btn-lg sub-btn"><span>Submit</span></button>
+                <button class="btn btn-primary butn btn-lg sub-btn submit"><span>Submit</span></button>
 
 
             </div>

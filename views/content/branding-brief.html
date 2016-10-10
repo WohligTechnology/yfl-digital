@@ -1,6 +1,7 @@
 <div class="container main-form" ng-if="!formComplete">
-  <h2 class="text-center italic">"Put your heart, mind, and soul into even your smallest acts. This is the secret of success." - Swami Sivananda</h2>
-  <h3 class="text-center  italic">Help us understand what your brand stands for and how you want to bring it to life.</h3>
+  <h2 class="text-center ">"Put your heart, mind, and soul into even your smallest acts. This is the secret of success." - Swami Sivananda</h2>
+  <h3 class="text-center  ">Help us understand what your brand stands for and how you want to bring it to life.</h3>
+<h4 class="text-center  f12">Note:All questions must be answered, unless marked optional*</h4>
   <form name="brandForm" class="mid-form" ng-submit="submitBrandForm(formData)" ng-if="!formComplete">
     <h4>Basic Information</h4>
     <hr>
@@ -14,7 +15,7 @@
       </div>
       <div class="col-md-4">
         <div class="form-group">
-          <label> Middle Name</label>
+          <label> Middle Name *</label>
           <input type="text" name="middleName" ng-model="formData.middleName" class="form-control" required aplha-only>
           <div class="error-msg" ng-if="brandForm.middleName.$invalid && brandForm.middleName.$touched">Please Enter Your Middle Name</div>
         </div>
@@ -30,7 +31,7 @@
     <div class="row">
       <div class="col-md-12">
         <div class="form-group">
-          <label>Company (If applicable)</label>
+          <label>Company (If applicable)*</label>
           <input type="text" name="company" ng-model="formData.company" class="form-control">
           <!--<div class="error-msg" ng-if="brandForm.company.$invalid && brandForm.company.$touched">Please Enter Your Company Name</div>-->
         </div>
@@ -784,7 +785,7 @@
           <div class="magic-resize">
             <input class="magic-checkbox" type="checkbox" id="Nostalgia" value="Nostalgias" name="interacting" ng-model="formData.interacting.Nostalgias">
             <label class="text" for="Nostalgia">
-                           
+
                             Nostalgia
                             </label>
           </div>
@@ -864,7 +865,7 @@
             <img src="img/unilever.jpg" class="img-responsive" alt="brands">
             <input class="magic-checkbox" type="checkbox" id="Combination" value="Combinations" name="logo" ng-model="formData.logo.Combinations">
             <label class="text" for="Combination">
-                          
+
 Combination Mark
                             </label>
           </div>
@@ -873,7 +874,7 @@ Combination Mark
             <img src="img/bmw.png" class="img-responsive" alt="brands">
             <input class="magic-checkbox" type="checkbox" id="Emblem" value="Emblems" name="logo" ng-model="formData.logo.Emblems">
             <label class="text" for="Emblem">
-                            
+
 Emblem
                             </label>
           </div>
@@ -914,7 +915,7 @@ Emblem
             <img src="img/font5.png" class="img-responsive" alt="brands">
             <input class="magic-checkbox" type="checkbox" id="Bold" value="Bolds" name="prefer" ng-model="formData.prefer.Bolds">
             <label class="text" for="Bold">
-                            
+
 Bold
                             </label>
           </div>
@@ -922,7 +923,7 @@ Bold
             <img src="img/font6.png" class="img-responsive" alt="brands">
             <input class="magic-checkbox" type="checkbox" id="Customised" value="Customiseds" name="prefer" ng-model="formData.prefer.Customiseds">
             <label class="text" for="Customised">
-                            
+
 Customised
                             </label>
           </div>
@@ -978,7 +979,7 @@ Customised
           <div class="magic-resize">
             <input class="magic-checkbox" type="checkbox" id="Mobile" value="Mobiles" name="intention" ng-model="formData.intention.Mobiles">
             <label class="text" for="Mobile">
-                            
+
 Mobile
                             </label>
           </div>
@@ -1018,7 +1019,7 @@ Mobile
       </div>
 
       <div class="form-group text-center mt25 ">
-        <button class="btn btn-primary butn btn-lg sub-btn"><span>Submit</span></button>
+        <button class="btn btn-primary butn btn-lg sub-btn submit"><span>Submit</span></button>
 
 
       </div>
