@@ -1,4 +1,5 @@
 <div class="container main-form" ng-if="!formComplete">
+    <h2 class="text-center italic">"Put your heart, mind, and soul into even your smallest acts. This is the secret of success." - Swami Sivananda</h2>
     <h3 class="text-center italic">Help us understand what your website would represent and how you want to bring it to life.</h3>
     <form name="webForm" class="mid-form" ng-submit="submitWebForm(formData)" ng-if="!formComplete">
         <h4>Getting Started</h4>
@@ -810,10 +811,18 @@
         </div>
 
 
-        <div class="form-group text-center final-btn">
-            <button type="submit" class="btn btn-primary butn btn-lg sub-btn" ng-disabled="webForm.$invalid"><span ng-if="webForm.$invalid">Please Enter Mandatory Fields</span></button>
+        <div class="button-center text-center">
+            <div class="form-group text-center mt25 ">
+                <button class="btn btn-primary butn btn-lg sub-btn"><span>Clear</span></button>
 
 
+            </div>
+
+            <div class="form-group text-center mt25 ">
+                <button class="btn btn-primary butn btn-lg sub-btn"><span>Submit</span></button>
+
+
+            </div>
         </div>
     </form>
     <div class="submit-thank" ng-if="formComplete">
