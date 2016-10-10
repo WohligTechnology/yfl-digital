@@ -534,7 +534,7 @@ fieldset[disabled] .btn-primary.focus {
 }
 
 .butn {
-    background-color: #e73d50;
+    background-color: #A51A1A;
     border-radius: 5px;
     border: none;
     padding: 8px 80px;
@@ -550,22 +550,22 @@ fieldset[disabled] .btn-primary.focus {
 .btn-primary {
     &:hover {
         color: #fff;
-        background-color: rgba(231, 61, 80, 0.88);
-        border-color: #e73d50;
+        background-color: #590E0E;
+        border-color: #590E0E;
     }
     &:focus {
         color: #fff;
-        background-color: #e73d50;
-        border-color: #e73d50;
+        background-color: #590E0E;
+        border-color: #590E0E;
     }
     &:active {
         color: #fff;
-        background-color: #e73d50;
-        border-color: #e73d50;
+        background-color: #590E0E;
+        border-color: #590E0E;
         &:focus {
             color: #fff;
-            background-color: #e73d50;
-            border-color: #e73d50;
+            background-color: #590E0E;
+            border-color: #590E0E;
         }
     }
 }
