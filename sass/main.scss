@@ -245,6 +245,8 @@ a {
 }
 .f12{
   font-size: 12px;
+  font-weight: normal !important;
+  font-family: "Lato", "Times New Roman", Times, serif !important;
 }
 .form-invalid {
     color: $brand-danger;
