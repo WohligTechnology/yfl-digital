@@ -1,7 +1,7 @@
 <div class="container main-form" ng-if="!formComplete">
   <h2 class="text-center ">"Put your heart, mind, and soul into even your smallest acts. This is the secret of success." - Swami Sivananda</h2>
   <h3 class="text-center  ">Help us understand what your brand stands for and how you want to bring it to life.</h3>
-<h4 class="text-center  f12">All questions must be answered, unless marked optional*</h4>
+  <h4 class="text-center  f12">All questions must be answered, unless marked optional*</h4>
   <form name="brandForm" class="mid-form" ng-submit="submitBrandForm(formData)" ng-if="!formComplete">
     <h4>Basic Information</h4>
     <hr>
@@ -995,9 +995,9 @@ Mobile
         </div>
       </div>
       <div class="col-md-6">
-        <div class="form-group">
+        <div class="form-group mt5">
           <label> Is there something in particular you love and want your brand identity to include?</label>
-          <input type="text" name="identity" ng-model="formData.identity" class="form-control">
+          <input type="text" name="identity" ng-model="formData.identity" class="form-control h50">
           <!--<div class="error-msg" ng-if="brandForm.identity.$invalid && brandForm.identity.$touched">Please Enter Something You Love</div>-->
         </div>
       </div>

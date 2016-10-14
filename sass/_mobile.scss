@@ -4,9 +4,18 @@
             width: 100%;
         }
     }
+    .button-center .form-group {
+        margin: 15px;
+    }
+    .mt5 {
+        margin-top: 5px;
+    }
     .magic-form {
         .magic-resize {
             width: 45% !important;
+        }
+        .resizing {
+            width: 100% !important;
         }
         .termobile {
             width: auto!important;
@@ -34,6 +43,14 @@
     .magic-form .magic-resizes .magic-radio+label:after {
         width: 6px;
         height: 6px;
+    }
+    .main-form {
+        h2 {
+            font-size: 15px;
+        }
+        h3 {
+            font-size: 14px;
+        }
     }
 }
 

@@ -240,14 +240,21 @@ a {
     h2 {
         font-size: 20px;
         font-family: $font-family-sans-serif;
-        color: #f8cb2a;
+        color: #000;
     }
 }
-.f12{
-  font-size: 12px;
-  font-weight: normal !important;
-  font-family: "Lato", "Times New Roman", Times, serif !important;
+
+.f12 {
+    font-size: 12px;
+    font-weight: normal !important;
+    font-family: "Lato", "Times New Roman", Times, serif !important;
+    color: #e73d50;
 }
+
+.h50 {
+    height: 50px;
+}
+
 .form-invalid {
     color: $brand-danger;
     .form-control {
@@ -550,22 +557,23 @@ fieldset[disabled] .btn-primary.focus {
         span {
             text-transform: uppercase;
             font-weight: 700;
+            font-size: 14px;
         }
     }
     .submit {
         background-color: rgba(255, 209, 0, 0.93);
         &:hover {
-            background-color: rgba(255, 214, 0, 0.7);
-            border-color: rgba(255, 214, 0, 0.7);
+            background-color: rgba(255, 209, 0, 0.93);
+            border-color: rgba(255, 209, 0, 0.93);
         }
         &:focus {
-            background-color: rgb(255, 214, 0);
-            border-color: rgb(255, 214, 0);
+            background-color: rgba(255, 209, 0, 0.93);
+            border-color: rgba(255, 209, 0, 0.93);
         }
         &:active {
             &:focus {
-                background-color: rgb(255, 214, 0);
-                border-color: rgb(255, 214, 0);
+                background-color: rgba(255, 209, 0, 0.93);
+                border-color: rgba(255, 209, 0, 0.93);
             }
         }
     }
@@ -574,23 +582,23 @@ fieldset[disabled] .btn-primary.focus {
 .btn-primary {
     &:hover {
         color: #fff;
-        background-color: rgba(112, 255, 191, 0.67);
-        border-color: rgba(112, 255, 191, 0.67);
+        background-color: rgb(100, 203, 201);
+        border-color: rgb(100, 203, 201);
     }
     &:focus {
         color: #fff;
-        background-color: rgba(112, 255, 191, 0.67);
-        border-color: rgba(112, 255, 191, 0.67);
+        background-color: rgb(100, 203, 201);
+        border-color: rgb(100, 203, 201);
         outline: 0;
     }
     &:active {
         color: #fff;
-        background-color: rgba(112, 255, 191, 0.67);
-        border-color: rgba(112, 255, 191, 0.67);
+        background-color: rgb(100, 203, 201);
+        border-color: rgb(100, 203, 201);
         &:focus {
             color: #fff;
-            background-color: rgba(112, 255, 191, 0.67);
-            border-color: rgba(112, 255, 191, 0.67);
+            background-color: rgb(100, 203, 201);
+            border-color: rgb(100, 203, 201);
             outline: 0;
         }
     }
