@@ -72,28 +72,28 @@
                     <div class="magic-form">
                         <div class="magic-resize">
                             <input class="magic-checkbox" type="checkbox" name="requirement" value="mobileApp" ng-model="formData.requirement.mobileApp"
-                                id="app">
+                                id="app" ng-click="webAppRequirements('mobileApp')">
                             <label class="text" for="app">
                                 Mobile App
                             </label>
                         </div>
                         <div class="magic-resize">
                             <input class="magic-checkbox" type="checkbox" name="requirement" value="mediaInt" ng-model="formData.requirement.mediaInt"
-                                id="Media">
+                                id="Media" ng-click="webAppRequirements('mediaInt')">
                             <label class="text" for="Media">
                                Social Medial Integration
                             </label>
                         </div>
                         <div class="magic-resize">
                             <input class="magic-checkbox" type="checkbox" name="requirement" value="websitedesign" ng-model="formData.requirement.websitedesign"
-                                id="design">
+                                id="design" ng-click="webAppRequirements('websitedesign')">
                             <label class="text" for="design">
                               Website Design
                             </label>
                         </div>
                         <div class="magic-resize">
                             <input class="magic-checkbox" type="checkbox" name="requirement" value="websitecoding" ng-model="formData.requirement.websitecoding"
-                                id="coding">
+                                id="coding" ng-click="webAppRequirements('websitecoding')">
                             <label class="text" for="coding">
                                 Website Coding
                             </label>
@@ -297,67 +297,67 @@
                 <label>Which of the following sections/features would you want in the site (other than Home, About and Contact)</label>
                 <div class="magic-form">
                     <div class="magic-resize">
-                        <input class="magic-checkbox" name="features" value="catalog" id="cat" type="checkbox" ng-model="formData.features.catalog">
+                        <input class="magic-checkbox" name="features" value="catalog" id="cat" type="checkbox" ng-model="formData.features.catalog" ng-click="websiteFeatures('catalog')">
                         <label class="text" for="cat">
                               Catalog
                             </label>
                     </div>
                     <div class="magic-resize">
-                        <input class="magic-checkbox" type="checkbox" name="features" value="gallery" id="gall" ng-model="formData.features.gallery">
+                        <input class="magic-checkbox" type="checkbox" name="features" value="gallery" id="gall" ng-model="formData.features.gallery" ng-click="websiteFeatures('gallery')">
                         <label class="text" for="gall">
                               Gallery / Slide Show
                             </label>
                     </div>
                     <div class="magic-resize">
-                        <input class="magic-checkbox" type="checkbox" name="features" value="new" id="new" ng-model="formData.features.new">
+                        <input class="magic-checkbox" type="checkbox" name="features" value="new" id="new" ng-model="formData.features.new" ng-click="websiteFeatures('new')">
                         <label class="text" for="new">
                              News
                             </label>
                     </div>
                     <div class="magic-resize">
-                        <input class="magic-checkbox" type="checkbox" name="features" value="events" id="event" ng-model="formData.features.events">
+                        <input class="magic-checkbox" type="checkbox" name="features" value="events" id="event" ng-model="formData.features.events" ng-click="websiteFeatures('events')">
                         <label class="text" for="event">
                                 Events Calendar
                             </label>
                     </div>
                     <div class="magic-resize">
-                        <input class="magic-checkbox" type="checkbox" name="features" value="press" id="pres" ng-model="formData.features.press">
+                        <input class="magic-checkbox" type="checkbox" name="features" value="press" id="pres" ng-model="formData.features.press" ng-click="websiteFeatures('press')">
                         <label class="text" for="pres">
                                Press
                             </label>
                     </div>
                     <div class="magic-resize">
-                        <input class="magic-checkbox" type="checkbox" name="features" value="ulogin" id="log" ng-model="formData.features.ulogin">
+                        <input class="magic-checkbox" type="checkbox" name="features" value="ulogin" id="log" ng-model="formData.features.ulogin" ng-click="websiteFeatures('userLogin')">
                         <label class="text" for="log">
                                Support user login
                             </label>
                     </div>
                     <div class="magic-resize">
-                        <input class="magic-checkbox" type="checkbox" name="features" value="portal" id="port" ng-model="formData.features.portal">
+                        <input class="magic-checkbox" type="checkbox" name="features" value="portal" id="port" ng-model="formData.features.portal" ng-click="websiteFeatures('portal')">
                         <label class="text" for="port">
                              Based on type of user, have different functionalists (Portals)
                             </label>
                     </div>
                     <div class="magic-resize">
-                        <input class="magic-checkbox" type="checkbox" name="features" value="feedback" id="feed" ng-model="formData.features.feedback">
+                        <input class="magic-checkbox" type="checkbox" name="features" value="feedback" id="feed" ng-model="formData.features.feedback" ng-click="websiteFeatures('feedback')">
                         <label class="text" for="feed">
                              Feedback Form
                             </label>
                     </div>
                     <div class="magic-resize">
-                        <input class="magic-checkbox" type="checkbox" name="features" value="contact" id="cont" ng-model="formData.features.contact">
+                        <input class="magic-checkbox" type="checkbox" name="features" value="contact" id="cont" ng-model="formData.features.contact" ng-click="websiteFeatures('contact')">
                         <label class="text" for="cont">
                             Contact Form
                             </label>
                     </div>
                     <div class="magic-resize">
-                        <input class="magic-checkbox" type="checkbox" name="features" value="logins" id="logs" ng-model="formData.features.logins">
+                        <input class="magic-checkbox" type="checkbox" name="features" value="logins" id="logs" ng-model="formData.features.logins" ng-click="websiteFeatures('login')">
                         <label class="text" for="logs">
                            Login
                             </label>
                     </div>
                     <div class="magic-resize">
-                        <input class="magic-checkbox" type="checkbox" name="features" value="custom" id="customs" ng-model="formData.features.custom">
+                        <input class="magic-checkbox" type="checkbox" name="features" value="custom" id="customs" ng-model="formData.features.custom" ng-click="websiteFeatures('custom')">
                         <label class="text" for="customs">
                           Some specific unique/custom functionality.
                             </label>
