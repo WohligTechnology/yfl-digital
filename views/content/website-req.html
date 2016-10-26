@@ -106,7 +106,7 @@
 
                         </div>-->
                         <p class="other-label">Other:</p>
-                        <input type="text" class="form-control textbox-other" placeholder="Please mention other">
+                        <input type="text" class="form-control textbox-other" placeholder="Please mention other" ng-model="formData.requirement.myother2">
                     </div>
                 </div>
             </div>
@@ -369,7 +369,7 @@
                             </label>
                     </div>-->
                     <p class="other-label">Other or if you want to elaborate:</p>
-                    <input type="text" class="form-control textbox-other box-space" placeholder="Please mention other">
+                    <input type="text" class="form-control textbox-other box-space" placeholder="Please mention other" ng-model="formData.features.myotherFeature">
                 </div>
 
 
@@ -607,31 +607,31 @@
                 <p class=explanation>Select any of the following and please add anything that is not in the list.</p>
                 <div class="magic-form">
                     <div class="magic-resize">
-                        <input class="magic-checkbox" type="checkbox" name="format" value="simpleformat" id="updation" ng-model="formData.format.simpleformat">
+                        <input class="magic-checkbox" type="checkbox" name="format" value="simpleformat" id="updation" ng-model="formData.format.simpleformat" ng-click="contentType('simpleformat')">
                         <label class="text" for="updation">
                              Simple text with formatting, colour, fonts & links
                             </label>
                     </div>
                     <div class="magic-resize">
-                        <input class="magic-checkbox" type="checkbox" name="format" value="diffformat" id="styles" ng-model="formData.format.diffformat">
+                        <input class="magic-checkbox" type="checkbox" name="format" value="diffformat" id="styles" ng-model="formData.format.diffformat" ng-click="contentType('diffformat')">
                         <label class="text" for="styles">
                             Content, but with different formatting styles
                             </label>
                     </div>
                     <div class="magic-resize">
-                        <input class="magic-checkbox" type="checkbox" name="format" value="documents" id="docs" ng-model="formData.format.documents">
+                        <input class="magic-checkbox" type="checkbox" name="format" value="documents" id="docs" ng-model="formData.format.documents" ng-click="contentType('documents')">
                         <label class="text" for="docs">
                              Documents
                             </label>
                     </div>
                     <div class="magic-resize">
-                        <input class="magic-checkbox" type="checkbox" name="format" value="images" id="imag" ng-model="formData.format.images">
+                        <input class="magic-checkbox" type="checkbox" name="format" value="images" id="imag" ng-model="formData.format.images" ng-click="contentType('images')">
                         <label class="text" for="imag">
                               Images
                             </label>
                     </div>
                     <div class="magic-resize">
-                        <input class="magic-checkbox" type="checkbox" name="format" value="effects" id="effect" ng-model="formData.format.effects">
+                        <input class="magic-checkbox" type="checkbox" name="format" value="effects" id="effect" ng-model="formData.format.effects" ng-click="contentType('effectss')">
                         <label class="text" for="effect">
                              Complex Animation / Effects / Graphics
                             </label>
@@ -643,7 +643,7 @@
                             </label>
                     </div>-->
                     <p class="other-label">Other or if you want to elaborate:</p>
-                    <input type="text" class="form-control textbox-other box-space" placeholder="Please mention other">
+                    <input type="text" class="form-control textbox-other box-space" placeholder="Please mention other" ng-model="formData.format.myother" >
                 </div>
             </div>
         </div>
@@ -848,7 +848,7 @@
             </div>
 
             <div class="form-group text-center mt25 ">
-                <button class="btn btn-primary butn btn-lg sub-btn submit"><span>Submit</span></button>
+                <button class="btn btn-primary butn btn-lg sub-btn submit" type="submit"><span>Submit</span></button>
 
 
             </div>

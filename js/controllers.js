@@ -61,7 +61,9 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.formData.brandLogosArr = [];
         $scope.formData.finishingUpArr = [];
         $scope.formData.brandFontsArr = [];
-        $scope.submitFormData = function(formData) {
+        $scope.submitBrandForm = function(formData) {
+
+          console.log("formData".formData);
             if ($scope.formData.brandBriefArr.length > 0) {
                 _.each($scope.formData.brandBriefArr, function(n) {
                     $scope.formData.brandBrief += n + ",";
@@ -165,6 +167,28 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
           $scope.formData={};
           $scope.formData.requirementsArr=[];
           $scope.formData.websiteFeaturesArr=[];
+          $scope.formData.contentTypeArr=[];
+          $scope.submitWebForm =function(formData){
+            console.log("formData",formData);
+            if (formData.format.myother!='') {
+                $scope.contentType(formData.format.myother);
+
+                _.each($scope.formData.contentTypeArr, function(n) {
+                    $scope.formData.contentType += n + ",";
+                });
+
+
+            }
+            if (formData.features.myotherFeature!='') {
+                $scope.websiteFeatures(formData.features.myotherFeature);
+
+                _.each($scope.formData.websiteFeaturesArr, function(n) {
+                    $scope.formData.websiteFeature += n + ",";
+                });
+
+
+            }
+          }
           $scope.webAppRequirements=function(val){
             var foundIndex = _.findIndex($scope.formData.requirementsArr,function(key){
               return key == val;
@@ -187,6 +211,18 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
             };
             console.log($scope.formData.websiteFeaturesArr);
+          }
+          $scope.contentType=function(val){
+            var foundIndex = _.findIndex($scope.formData.contentTypeArr, function(key){
+              return key == val ;
+            });
+            if (foundIndex == -1) {
+              $scope.formData.contentTypeArr.push(val);
+            }else {
+              $scope.formData.contentTypeArr.splice(foundIndex,1);
+
+            };
+            console.log($scope.formData.contentTypeArr);
           }
     })
 
