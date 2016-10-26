@@ -10,14 +10,15 @@
                 <div class="form-group">
                     <label> First Name</label>
                     <input type="text" name="firstName" ng-model="formData.firstName" class="form-control" required aplha-only>
+
                     <div class="error-msg" ng-if="webForm.firstName.$invalid && webForm.firstName.$touched">Please Enter Your First Name</div>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="form-group">
                     <label> Middle Name *</label>
-                    <input type="text" name="middleName" ng-model="formData.middleName" class="form-control" required aplha-only>
-                    <div class="error-msg" ng-if="webForm.middleName.$invalid && webForm.middleName.$touched">Please Enter Your Middle Name</div>
+                    <input type="text" name="middleName" ng-model="formData.middleName" class="form-control"  aplha-only>
+                    <!-- <div class="error-msg" ng-if="webForm.middleName.$invalid && webForm.middleName.$touched">Please Enter Your Middle Name</div> -->
                 </div>
             </div>
             <div class="col-md-4">
@@ -32,8 +33,8 @@
             <div class="col-md-12">
                 <div class="form-group">
                     <label>Company Name *</label>
-                    <input type="text" name="companyName" ng-model="formData.companyName" class="form-control" required aplha-only>
-                    <div class="error-msg" ng-if="webForm.companyName.$invalid && webForm.companyName.$touched">Please Enter Your Company Name</div>
+                    <input type="text" name="companyName" ng-model="formData.companyName" class="form-control"  aplha-only>
+                    <!-- <div class="error-msg" ng-if="webForm.companyName.$invalid && webForm.companyName.$touched">Please Enter Your Company Name</div> -->
                 </div>
             </div>
         </div>
@@ -41,14 +42,15 @@
             <div class="col-md-6">
                 <div class="form-group">
                     <label>What is the business and how will your website advance it?</label>
-                    <input type="text" name="advance" ng-model="formData.advance" class="form-control">
-                    <!-- <div class="error-msg" ng-if="webForm.advance.$invalid && webForm.advance.$touched">Please Enter the Field</div> -->
+                    <input type="text" name="business" ng-model="formData.business" class="form-control"  required>
+                    <div class="error-msg" ng-if="webForm.business.$invalid && webForm.business.$touched">Please Enter the Field</div>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="form-group">
                     <label>What message is the website supposed to convey?</label>
-                    <input type="text" name="convey" ng-model="formData.convey" class="form-control">
+                    <input type="text" name="message" ng-model="formData.message" class="form-control" required>
+                    <div class="error-msg" ng-if="webForm.message.$invalid && webForm.message.$touched">Please Enter the Field</div>
                 </div>
             </div>
         </div>
@@ -58,7 +60,8 @@
                     <label>Who is the primary audience for the website (demographics)?</label>
                     <p class=explanation>Their professions, disciplines, age and interests? (If the target is a broad-based, international audience,
                         with potentially slow modems, old browsers, this might limit the design options.)</p>
-                    <input type="text" name="audience" ng-model="formData.audience" class="form-control">
+                    <input type="text" name="demographics" ng-model="formData.demographics" class="form-control" required>
+                    <div class="error-msg" ng-if="webForm.demographics.$invalid && webForm.demographics.$touched">Please Enter the Field</div>
                 </div>
             </div>
         </div>
@@ -69,6 +72,9 @@
             <div class="col-md-12">
                 <div class="form-group">
                     <label>What is it that you require? If it’s a mobile app or social media, please share specific requirements.</label>
+                    <div class="error" ng-if="selectrequirements" style="font-size:16px;margin:10px 0 0;">
+                       Please select one of these.
+                    </div>
                     <div class="magic-form">
                         <div class="magic-resize">
                             <input class="magic-checkbox" type="checkbox" name="requirement" value="mobileApp" ng-model="formData.requirement.mobileApp"
@@ -106,8 +112,9 @@
 
                         </div>-->
                         <p class="other-label">Other:</p>
-                        <input type="text" class="form-control textbox-other" placeholder="Please mention other" ng-model="formData.requirement.myother2">
+                        <input type="text" class="form-control textbox-other" placeholder="Please mention other" ng-model="formData.requirement.myother">
                     </div>
+
                 </div>
             </div>
 
@@ -119,16 +126,19 @@
                     <label>Do you need a website that can work smoothly on mobile devices like Samsung Galaxy (Android) and the iPhone (iOS)? This means the site has to be a ‘Responsive Design’ which adjusts dynamically to various screen sizes and resolutions.</label>
                     <p class="label-note">Please note that this usually means added time and considerable cost - 1.5-2x the cost, since we need
                         to design a separate layout for this purpose.</p>
+                        <!-- <div class="error" ng-if="selectresponsiveDesign" style="font-size:16px;margin:10px 0 0;">
+                           Please select one of these.
+                        </div> -->
 
                     <div class="magic-form">
                         <div class="magic-resize">
-                            <input class="magic-radio" type="radio" name="demonstration" id="yes" value="true" ng-model="formData.demonstration">
+                            <input class="magic-radio" type="radio" name="demonstration" id="yes" value="true" ng-model="formData.responsiveDesign" required>
                             <label class="text" for="yes">
                         Yes
                      </label>
                         </div>
                         <div class="magic-resize">
-                            <input class="magic-radio" type="radio" name="demonstration" id="no" value="false" ng-model="formData.demonstration">
+                            <input class="magic-radio" type="radio" name="demonstration" id="no" value="false" ng-model="formData.responsiveDesign" required>
                             <label class="text" for="no">
                         No
                      </label>
@@ -142,15 +152,18 @@
                 <div class="form-group">
                     <label>Do you need a catalogue for the site?</label>
                     <p class="label-note">A catalogue helps you display a range of products in an organized manner.</p>
+                    <div class="error" ng-if="selectCatalogue" style="font-size:16px;margin:10px 0 0;">
+                       Please select one of these.
+                    </div>
                     <div class="magic-form">
                         <div class="magic-resize">
-                            <input class="magic-radio" type="radio" name="demonstrations" id="yess" value="true" ng-model="formData.demonstrations">
+                            <input class="magic-radio" type="radio" name="demonstrations" id="yess" value="true" ng-model="formData.catalogue" required>
                             <label class="text" for="yess">
                         Yes
                      </label>
                         </div>
                         <div class="magic-resize">
-                            <input class="magic-radio" type="radio" name="demonstrations" id="noo" value="false" ng-model="formData.demonstrations">
+                            <input class="magic-radio" type="radio" name="demonstrations" id="noo" value="false" ng-model="formData.catalogue" required>
                             <label class="text" for="noo">
                         No
                      </label>
@@ -165,15 +178,18 @@
             <div class="col-md-6">
                 <div class="form-group">
                     <label>Do you need a copywriter?</label>
+                    <div class="error" ng-if="selectcopywriter" style="font-size:16px;margin:10px 0 0;">
+                       Please select one of these.
+                    </div>
                     <div class="magic-form">
                         <div class="magic-resize">
-                            <input class="magic-radio" type="radio" name="copyrighter" id="1" value="true" ng-model="formData.copyrighter">
+                            <input class="magic-radio" type="radio" name="copyrighter" id="1" value="true" ng-model="formData.copywriter" required>
                             <label class="text" for="1">
                         Yes
                      </label>
                         </div>
                         <div class="magic-resize">
-                            <input class="magic-radio" type="radio" name="copyrighter" id="2" value="false" ng-model="formData.copyrighter">
+                            <input class="magic-radio" type="radio" name="copyrighter" id="2" value="false" ng-model="formData.copywriter" required>
                             <label class="text" for="2">
                         No
                      </label>
@@ -186,15 +202,18 @@
             <div class="col-md-6">
                 <div class="form-group">
                     <label> If you are using existing copy on your current website, will it need to be modified in any way?</label>
+                    <div class="error" ng-if="selectmodifiedWebsite" style="font-size:16px;margin:10px 0 0;">
+                       Please select one of these.
+                    </div>
                     <div class="magic-form">
                         <div class="magic-resize">
-                            <input class="magic-radio" type="radio" name="modified" id="3" value="true" ng-model="formData.modified">
+                            <input class="magic-radio" type="radio" name="modified" id="3" value="true" ng-model="formData.modifiedWebsite" required >
                             <label class="text" for="3">
                         Yes
                      </label>
                         </div>
                         <div class="magic-resize">
-                            <input class="magic-radio" type="radio" name="modified" id="4" value="false" ng-model="formData.modified">
+                            <input class="magic-radio" type="radio" name="modified" id="4" value="false" ng-model="formData.modifiedWebsite" required >
                             <label class="text" for="4">
                         No
                      </label>
@@ -211,15 +230,18 @@
                     <label>Do you need a web domain name and hosting for the website?</label>
                     <p class="explanation">A domain name is the name of your website. You need to register for this. We can suggest some sites.
                         Hosting needs depend on the sophistication of your site. We can discuss if you need assistance.</p>
+                        <div class="error" ng-if="selectwebDomain" style="font-size:16px;margin:10px 0 0;">
+                           Please select one of these.
+                        </div>
                     <div class="magic-form">
                         <div class="magic-resize">
-                            <input class="magic-radio" type="radio" name="domain" id="5" value="true" ng-model="formData.domain">
+                            <input class="magic-radio" type="radio" name="domain" id="5" value="true" ng-model="formData.webDomain" required>
                             <label class="text" for="5">
                         Yes
                      </label>
                         </div>
                         <div class="magic-resize">
-                            <input class="magic-radio" type="radio" name="domain" id="6" value="false" ng-model="formData.domain">
+                            <input class="magic-radio" type="radio" name="domain" id="6" value="false" ng-model="formData.webDomain" required>
                             <label class="text" for="6">
                         No
                      </label>
@@ -247,15 +269,18 @@
                         than one update every 3-4 months. A dynamic site gives you control on your content. Additionally,
                         more features and upgrades are possible on a dynamic site.
                     </p>
+                    <div class="error" ng-if="selectstaticDynamic" style="font-size:16px;margin:10px 0 0;">
+                       Please select one of these.
+                    </div>
                     <div class="magic-form">
                         <div class="magic-resize">
-                            <input class="magic-radio" type="radio" name="sitetype" id="7" value="true" ng-model="formData.sitetype">
+                            <input class="magic-radio" type="radio" name="sitetype" id="7" value="true" ng-model="formData.staticDynamic" required>
                             <label class="text" for="7">
                         Yes
                      </label>
                         </div>
                         <div class="magic-resize">
-                            <input class="magic-radio" type="radio" name="sitetype" id="8" value="false" ng-model="formData.sitetype">
+                            <input class="magic-radio" type="radio" name="sitetype" id="8" value="false" ng-model="formData.staticDynamic" required>
                             <label class="text" for="8">
                         No
                      </label>
@@ -272,13 +297,13 @@
             <div class="col-md-6">
                 <div class="form-group">
                     <label>What do you want the user to do when they get to your site?</label>
-                    <input type="text" name="user" ng-model="formData.user" class="form-control">
+                    <input type="text" name="user" ng-model="formData.sitePurpose1" class="form-control" required>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="form-group">
                     <label>What are your goals for the website in terms of visitor actions?</label>
-                    <input type="text" name="actions" ng-model="formData.actions" class="form-control">
+                    <input type="text" name="actions" ng-model="formData.sitePurpose2" class="form-control" required>
                 </div>
             </div>
         </div>
@@ -286,7 +311,7 @@
             <div class="col-md-12">
                 <div class="form-group">
                     <label>What do you think your site user should accomplish on your site?</label>
-                    <input type="text" name="accomplish" ng-model="formData.accomplish" class="form-control">
+                    <input type="text" name="accomplish" ng-model="formData.sitePurpose3" class="form-control" required>
                 </div>
             </div>
         </div>
@@ -295,6 +320,9 @@
         <div class="row">
             <div class="col-md-12">
                 <label>Which of the following sections/features would you want in the site (other than Home, About and Contact)</label>
+                <div class="error" ng-if="selectwebsiteFeatures" style="font-size:16px;margin:10px 0 0;">
+                   Please select one of these.
+                </div>
                 <div class="magic-form">
                     <div class="magic-resize">
                         <input class="magic-checkbox" name="features" value="catalog" id="cat" type="checkbox" ng-model="formData.features.catalog" ng-click="websiteFeatures('catalog')">
@@ -370,6 +398,8 @@
                     </div>-->
                     <p class="other-label">Other or if you want to elaborate:</p>
                     <input type="text" class="form-control textbox-other box-space" placeholder="Please mention other" ng-model="formData.features.myotherFeature">
+
+
                 </div>
 
 
@@ -380,15 +410,18 @@
                 <div class="form-group">
                     <label>Would your website have a blog?</label>
                     <p class=explanation>If yes, will this be a custom blog for the site or a link to an existing blog?</p>
+                    <!-- <div class="error" ng-if="selectblog" style="font-size:16px;margin:10px 0 0;">
+                       Please select one of these.
+                    </div> -->
                     <div class="magic-form">
                         <div class="magic-resize">
-                            <input class="magic-radio" type="radio" name="demos" id="ya" value="true" ng-model="formData.demos" ng-click="showpopup('y')">
+                            <input class="magic-radio" type="radio" name="demos" id="ya" value="yes"  ng-click="showpopup('y')" >
                             <label class="text" for="ya">
                         Yes
                      </label>
                         </div>
                         <div class="magic-resize">
-                            <input class="magic-radio" type="radio" name="demos" id="na" value="false" ng-model="formData.demos" ng-click="showpopup('n')">
+                            <input class="magic-radio" type="radio" name="demos" id="na" value="No"  ng-click="showpopup('n')" ng-model="formData.blog" >
                             <label class="text" for="na">
                         No
                      </label>
@@ -397,31 +430,34 @@
                     <div class="conditional-fields" ng-show="popup">
                         <div class="magic-form">
                             <div class="magic-resize">
-                                <input class="magic-radio" type="radio" name="demos" id="inner-n" value="true" ng-click="showTextbox('n')">
+                                <input class="magic-radio" type="radio" name="demos" id="inner-n" value="Custom blog" ng-click="showTextbox('n')" ng-model="formData.blog" >
                                 <label class="text" for="inner-n"> Custom blog</label>
                             </div>
                             <div class="magic-resize">
-                                <input class="magic-radio" type="radio" name="demos" id="inner-y" value="false" ng-click="showTextbox('y')">
+                                <input class="magic-radio" type="radio" name="demos" id="inner-y" value="false" ng-click="showTextbox('y')" ng-model="formData.blogss"  >
                                 <label class="text" for="inner-y"> Link to an existing blog. </label>
                             </div>
                         </div>
-                        <input type="text" class="form-control textbox-other" placeholder="Please Enter the Link" ng-show="textboxVal">
+                        <input type="text" class="form-control textbox-other" placeholder="Please Enter the Link" ng-show="textboxVal" ng-model="formData.blog" >
                     </div>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="form-group">
                     <label>Would your website require e-commerce?</label>
+                    <!-- <div class="error" ng-if="selectecommerce" style="font-size:16px;margin:10px 0 0;">
+                       Please select one of these.
+                    </div> -->
 
                     <div class="magic-form">
                         <div class="magic-resize">
-                            <input class="magic-radio" type="radio" name="ecommerce" id="11" value="true" ng-model="formData.ecommerce" ng-click="showpopups('y')">
+                            <input class="magic-radio" type="radio" name="ecommerce" id="11" value="Yes"  ng-click="showpopups('y')" required>
                             <label class="text" for="11">
                         Yes
                      </label>
                         </div>
                         <div class="magic-resize">
-                            <input class="magic-radio" type="radio" name="ecommerce" id="12" value="false" ng-model="formData.ecommerce" ng-click="showpopups('n')">
+                            <input class="magic-radio" type="radio" name="ecommerce" id="12" value="No"  ng-click="showpopups('n')"  ng-model="formData.ecommerce" required>
                             <label class="text" for="12">
                         No
                      </label>
@@ -430,11 +466,11 @@
                     <div class="conditional-fields" ng-show="popup2">
                         <div class="magic-form">
                             <div class="magic-resize">
-                                <input class="magic-radio" type="radio" name="ecommerce" id="single" value="true">
+                                <input class="magic-radio" type="radio" name="ecommerce" id="single" value="Single currency" ng-model="formData.ecommerce" >
                                 <label class="text" for="single"> Single currency</label>
                             </div>
                             <div class="magic-resize">
-                                <input class="magic-radio" type="radio" name="ecommerce" id="multiple" value="false">
+                                <input class="magic-radio" type="radio" name="ecommerce" id="multiple" value="Multiple currency" ng-model="formData.ecommerce" >
                                 <label class="text" for="multiple"> Multiple currency </label>
                             </div>
                         </div>
@@ -448,15 +484,18 @@
             <div class="col-md-6">
                 <div class="form-group">
                     <label>Do you expect the site to send mailers / email automatically?</label>
+                    <!-- <div class="error" ng-if="selectmailer" style="font-size:16px;margin:10px 0 0;">
+                       Please select one of these.
+                    </div> -->
                     <div class="magic-form">
                         <div class="magic-resize">
-                            <input class="magic-radio" type="radio" name="mailers" id="13" value="true" ng-model="formData.mailers">
+                            <input class="magic-radio" type="radio" name="mailers" id="13" value="true" ng-model="formData.mailer" required>
                             <label class="text" for="13">
                         Yes
                      </label>
                         </div>
                         <div class="magic-resize">
-                            <input class="magic-radio" type="radio" name="mailers" id="14" value="false" ng-model="formData.mailers">
+                            <input class="magic-radio" type="radio" name="mailers" id="14" value="false" ng-model="formData.mailer" required>
                             <label class="text" for="14">
                         No
                      </label>
@@ -469,16 +508,18 @@
             <div class="col-md-6">
                 <div class="form-group">
                     <label>Do you want people to be able to rate things on your site?</label>
-
+                    <div class="error" ng-if="selectrating" style="font-size:16px;margin:10px 0 0;">
+                       Please select one of these.
+                    </div>
                     <div class="magic-form">
                         <div class="magic-resize">
-                            <input class="magic-radio" type="radio" name="rate" id="15" value="true" ng-model="formData.rate">
+                            <input class="magic-radio" type="radio" name="rate" id="15" value="true" ng-model="formData.rating" required>
                             <label class="text" for="15">
                         Yes
                      </label>
                         </div>
                         <div class="magic-resize">
-                            <input class="magic-radio" type="radio" name="rate" id="16" value="false" ng-model="formData.rate">
+                            <input class="magic-radio" type="radio" name="rate" id="16" value="false" ng-model="formData.rating" required>
                             <label class="text" for="16">
                         No
                      </label>
@@ -494,22 +535,25 @@
                 <div class="form-group">
                     <label>Ideally if you could, please send us a sitemap of the website.</label>
                     <p class=explanation>A sitemap is basically a list of all the pages in the website, listed hierarchically.</p>
-                    <input type="text" name="ideally" ng-model="formData.ideally" class="form-control">
+                    <input type="text" name="ideally" ng-model="formData.siteMap" class="form-control" required>
                 </div>
             </div>
             <div class="col-md-6">
                 <label>Would you like your work/products to be professionally shot?</label>
                 <p class=explanation>We offer photography services or you can have it done at your end, but please ensure professional quality
                     of photographs since it can really impact the website.</p>
+                    <!-- <div class="error" ng-if="selectprofessionallyShotseo" style="font-size:16px;margin:10px 0 0;">
+                       Please select one of these.
+                    </div> -->
                 <div class="magic-form">
                     <div class="magic-resize">
-                        <input class="magic-radio" type="radio" name="products" id="17" value="true" ng-model="formData.products">
+                        <input class="magic-radio" type="radio" name="products" id="17" value="true" ng-model="formData.professionallyShotseo" required>
                         <label class="text" for="17">
                         Yes
                      </label>
                     </div>
                     <div class="magic-resize">
-                        <input class="magic-radio" type="radio" name="products" id="18" value="false" ng-model="formData.products">
+                        <input class="magic-radio" type="radio" name="products" id="18" value="false" ng-model="formData.professionallyShotseo" required>
                         <label class="text" for="18">
                         No
                      </label>
@@ -526,15 +570,18 @@
                     the level of optimisation you need. We also provide Google Analytics (GA) for you to analyse the profile
                     of the visitors to your site as well as what aspect they are interested in. We provide GA on a page or
                     site level. Page level is recommended for more detailed information.</p>
+                    <!-- <div class="error" ng-if="selectCatalogue" style="font-size:16px;margin:10px 0 0;">
+                       Please select one of these.
+                    </div> -->
                 <div class="magic-form">
                     <div class="magic-resize">
-                        <input class="magic-radio" type="radio" name="attract" id="19" value="true" ng-model="formData.attract">
+                        <input class="magic-radio" type="radio" name="attract" id="19" value="true" ng-model="formData.seo" required>
                         <label class="text" for="19">
                         Yes
                      </label>
                     </div>
                     <div class="magic-resize">
-                        <input class="magic-radio" type="radio" name="attract" id="20" value="false" ng-model="formData.attract">
+                        <input class="magic-radio" type="radio" name="attract" id="20" value="false" ng-model="formData.seo" required>
                         <label class="text" for="20">
                         No
                      </label>
@@ -544,15 +591,18 @@
             </div>
             <div class="col-md-6">
                 <label>Are you willing to spend extra for advanced SEO?</label>
+                <!-- <div class="error" ng-if="selectadvanceSeo" style="font-size:16px;margin:10px 0 0;">
+                   Please select one of these.
+                </div> -->
                 <div class="magic-form">
                     <div class="magic-resize">
-                        <input class="magic-radio" type="radio" name="seo" id="21" value="true" ng-model="formData.seo">
+                        <input class="magic-radio" type="radio" name="seo" id="21" value="true" ng-model="formData.advanceSeo" required>
                         <label class="text" for="21">
                         Yes
                      </label>
                     </div>
                     <div class="magic-resize">
-                        <input class="magic-radio" type="radio" name="seo" id="22" value="false" ng-model="formData.seo">
+                        <input class="magic-radio" type="radio" name="seo" id="22" value="false" ng-model="formData.advanceSeo" required>
                         <label class="text" for="22">
                         No
                      </label>
@@ -566,15 +616,18 @@
         <div class="row">
             <div class="col-md-6">
                 <label>If you plan to update content, do you have content writers and people who can create content (including images) for you?</label>
+                <!-- <div class="error" ng-if="selectcontentWriter" style="font-size:16px;margin:10px 0 0;">
+                   Please select one of these.
+                </div> -->
                 <div class="magic-form">
                     <div class="magic-resize">
-                        <input class="magic-radio" type="radio" name="contentwriter" id="content" value="true" ng-model="formData.contentwriter">
+                        <input class="magic-radio" type="radio" name="contentwriter" id="content" value="true" ng-model="formData.contentWriter" required>
                         <label class="text" for="content">
                         Yes
                      </label>
                     </div>
                     <div class="magic-resize">
-                        <input class="magic-radio" type="radio" name="contentwriter" id="writer" value="false" ng-model="formData.contentwriter">
+                        <input class="magic-radio" type="radio" name="contentwriter" id="writer" value="false" ng-model="formData.contentWriter" required>
                         <label class="text" for="writer">
                         No
                      </label>
@@ -584,15 +637,18 @@
             </div>
             <div class="col-md-6">
                 <label>Would your content writers happen to know HTML?</label>
+                <!-- <div class="error" ng-if="selectcontentWriterHtml" style="font-size:16px;margin:10px 0 0;">
+                   Please select one of these.
+                </div> -->
                 <div class="magic-form">
                     <div class="magic-resize">
-                        <input class="magic-radio" type="radio" name="html" id="23" value="true" ng-model="formData.html">
+                        <input class="magic-radio" type="radio" name="html" id="23" value="true" ng-model="formData.contentWriterHtml" required>
                         <label class="text" for="23">
                         Yes
                      </label>
                     </div>
                     <div class="magic-resize">
-                        <input class="magic-radio" type="radio" name="html" id="24" value="false" ng-model="formData.html">
+                        <input class="magic-radio" type="radio" name="html" id="24" value="false" ng-model="formData.contentWriterHtml" required>
                         <label class="text" for="24">
                         No
                      </label>
@@ -605,6 +661,9 @@
             <div class="col-md-12">
                 <label>What kind of content do you plan to update?</label>
                 <p class=explanation>Select any of the following and please add anything that is not in the list.</p>
+                <div class="error" ng-if="selectContentType" style="font-size:16px;margin:10px 0 0;">
+                   Please select one of these.
+                </div>
                 <div class="magic-form">
                     <div class="magic-resize">
                         <input class="magic-checkbox" type="checkbox" name="format" value="simpleformat" id="updation" ng-model="formData.format.simpleformat" ng-click="contentType('simpleformat')">
@@ -643,7 +702,9 @@
                             </label>
                     </div>-->
                     <p class="other-label">Other or if you want to elaborate:</p>
-                    <input type="text" class="form-control textbox-other box-space" placeholder="Please mention other" ng-model="formData.format.myother" >
+                    <input type="text" class="form-control textbox-other box-space" placeholder="Please mention other" ng-model="formData.format.myothercontent" >
+
+
                 </div>
             </div>
         </div>
@@ -653,15 +714,18 @@
                 <p class=explanation>This enables you to accept credit card and pay pal transactions on your site. Please be aware that due to
                     the paperwork involved it could take up to 2-3 months to activate this feature so we should start with
                     the paperwork as soon as we start the design.</p>
+                    <!-- <div class="error" ng-if="selectecommerceCapability" style="font-size:16px;margin:10px 0 0;">
+                       Please select one of these.
+                    </div> -->
                 <div class="magic-form">
                     <div class="magic-resize">
-                        <input class="magic-radio" type="radio" name="transaction" id="25" value="true" ng-model="formData.transaction">
+                        <input class="magic-radio" type="radio" name="transaction" id="25" value="true" ng-model="formData.ecommerceCapability" >
                         <label class="text" for="25">
                         Yes
                      </label>
                     </div>
                     <div class="magic-resize">
-                        <input class="magic-radio" type="radio" name="transaction" id="26" value="false" ng-model="formData.transaction">
+                        <input class="magic-radio" type="radio" name="transaction" id="26" value="false" ng-model="formData.ecommerceCapability" >
                         <label class="text" for="26">
                         No
                      </label>
@@ -675,22 +739,25 @@
 
 
 </label>
-                    <input type="text" class="form-control" name="revamp" ng-model="formData.revamp">
+                    <input type="text" class="form-control" name="revamp" ng-model="formData.duration" >
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="col-md-6">
                 <label>Are you willing to consider spending on Online Marketing, like via Facebook or Google Ad words?</label>
+                <!-- <div class="error" ng-if="selecteonlineMarketing" style="font-size:16px;margin:10px 0 0;">
+                   Please select one of these.
+                </div> -->
                 <div class="magic-form">
                     <div class="magic-resize">
-                        <input class="magic-radio" type="radio" name="social" id="27" value="true" ng-model="formData.social">
+                        <input class="magic-radio" type="radio" name="social" id="27" value="true" ng-model="formData.onlineMarketing" required>
                         <label class="text" for="27">
                         Yes
                      </label>
                     </div>
                     <div class="magic-resize">
-                        <input class="magic-radio" type="radio" name="social" id="28" value="false" ng-model="formData.social">
+                        <input class="magic-radio" type="radio" name="social" id="28" value="false" ng-model="formData.onlineMarketing" required>
                         <label class="text" for="28">
                         No
                      </label>
@@ -702,22 +769,25 @@
                 <div class="form-group">
                     <label> How frequently will you expect to update it?
 </label>
-                    <input type="text" class="form-control" name="update" ng-model="formData.update">
+                    <input type="text" class="form-control" name="update" ng-model="formData.update" required>
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="col-md-6">
                 <label>Do different people have different Roles/Permissions to manage the site?</label>
+                <!-- <div class="error" ng-if="selecterole" style="font-size:16px;margin:10px 0 0;">
+                   Please select one of these.
+                </div> -->
                 <div class="magic-form">
                     <div class="magic-resize">
-                        <input class="magic-radio" type="radio" name="roles" id="29" value="true" ng-model="formData.roles">
+                        <input class="magic-radio" type="radio" name="roles" id="29" value="true" ng-model="formData.role" required>
                         <label class="text" for="29">
                         Yes
                      </label>
                     </div>
                     <div class="magic-resize">
-                        <input class="magic-radio" type="radio" name="roles" id="30" value="false" ng-model="formData.roles">
+                        <input class="magic-radio" type="radio" name="roles" id="30" value="false" ng-model="formData.role" required>
                         <label class="text" for="30">
                         No
                      </label>
@@ -728,15 +798,18 @@
             <div class="col-md-6">
                 <label>All sites are built for English audiences, do you wish additional languages?</label>
                 <p class=explanation>The cost of a multi-lingual site is much higher. Please specify the languages.</p>
+                <!-- <div class="error" ng-if="selecteadditionalLanguage" style="font-size:16px;margin:10px 0 0;">
+                   Please select one of these.
+                </div> -->
                 <div class="magic-form">
                     <div class="magic-resize">
-                        <input class="magic-radio" type="radio" name="language" id="31" value="true" ng-model="formData.language">
+                        <input class="magic-radio" type="radio" name="language" id="31" value="true" ng-model="formData.additionalLanguage" required>
                         <label class="text" for="31">
                         Yes
                      </label>
                     </div>
                     <div class="magic-resize">
-                        <input class="magic-radio" type="radio" name="language" id="32" value="false" ng-model="formData.language">
+                        <input class="magic-radio" type="radio" name="language" id="32" value="false" ng-model="formData.additionalLanguage" required>
                         <label class="text" for="32">
                         No
                      </label>
@@ -751,7 +824,7 @@
                     <label> What is the tone of the website?</label>
                     <p class=explanation>Please use 2-5 adjectives. For instance, is it happy, playful, exciting etc? Please use single words
                         only. No phrases.</p>
-                    <input type="text" class="form-control" name="tone" ng-model="formData.tone">
+                    <input type="text" class="form-control" name="tone" ng-model="formData.tone" required>
                 </div>
             </div>
         </div>
@@ -762,14 +835,14 @@
                 <div class="form-group">
                     <label> Favorite Sites: Please list 3-5 websites you like. Include the URL, what you like about each site, and what you would improve upon?
 </label>
-                    <input type="text" class="form-control" name="url" ng-model="formData.url">
+                    <input type="text" class="form-control" name="url" ng-model="formData.favouriteSite" required>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="form-group">
                     <label> Least favorite sites: Please list 3-5 websites you don’t like, include the URL. What don’t you like about these sites? What redeeming qualities do they have?
 </label>
-                    <input type="text" class="form-control" name="qualities" ng-model="formData.qualities">
+                    <input type="text" class="form-control" name="qualities" ng-model="formData.leastFavouriteSite" required>
                 </div>
             </div>
         </div>
@@ -778,7 +851,7 @@
                 <div class="form-group">
                     <label> Selling points: tell us why you, your products or your services are better than your competition.
 </label>
-                    <input type="text" class="form-control" name="services" ng-model="formData.services">
+                    <input type="text" class="form-control" name="services" ng-model="formData.sellingPoint" required>
                 </div>
             </div>
             <div class="col-md-6">
@@ -787,7 +860,7 @@
 </label>
                     <p class=explanation>For instance, the color pink. Sharing why you don’t want a feature will help us get an understanding
                         of your user experience tastes, so feel free to elaborate.</p>
-                    <input type="text" class="form-control" name="remarks" ng-model="formData.remarks">
+                    <input type="text" class="form-control" name="remarks" ng-model="formData.siteNo" required>
                 </div>
             </div>
         </div>
@@ -796,7 +869,7 @@
                 <div class="form-group">
                     <label> Please list 5 (or more) adjectives that you think describe your company or should describe your company in order of relevance / importance.
 </label>
-                    <input type="text" class="form-control" name="describe" ng-model="formData.describe">
+                    <input type="text" class="form-control" name="describe" ng-model="formData.adjective" required>
                 </div>
             </div>
             <div class="col-md-6">
@@ -805,22 +878,25 @@
                     <p class=explanation>Feel free to provide more information on how they are your “competition”, but, at minimum, provide for
                         each competitor, include the company name, web address, and a list of “key terms” that describe what
                         they do and/or sell.</p>
-                    <input type="text" name="competition" class="form-control" ng-model="formData.competition">
+                    <input type="text" name="competition" class="form-control" ng-model="formData.competitors" required>
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="col-md-12">
                 <label>Would you like a more “corporate” (template based) site such as <a href="avasara.in">avasara.in</a> or a more experimental site where almost all pages have a different feel, such as <a href="wrap.co.in">wrap.co.in</a>?</label>
+                <!-- <div class="error" ng-if="selectcorporate" style="font-size:16px;margin:10px 0 0;">
+                   Please select one of these.
+                </div> -->
                 <div class="magic-form">
                     <div class="magic-resize">
-                        <input class="magic-radio" type="radio" name="sitetypes" id=" Corporate" value="true" ng-model="formData.sitetypes">
+                        <input class="magic-radio" type="radio" name="sitetypes" id=" Corporate" value="Corporate" ng-model="formData.corporate" required>
                         <label class="text" for=" Corporate">
                         Corporate
       </label>
                     </div>
                     <div class="magic-resize">
-                        <input class="magic-radio" type="radio" name="sitetypes" id=" Experimental" value="false" ng-model="formData.sitetypes">
+                        <input class="magic-radio" type="radio" name="sitetypes" id=" Experimental" value="Experimental" ng-model="formData.corporate" required>
                         <label class="text" for=" Experimental">
                      Experimental
 
@@ -834,7 +910,7 @@
             <div class="col-md-12">
                 <div class="form-group">
                     <label> Is there something in particular you love and want your website to include?</label>
-                    <input type="text" name="identity" ng-model="formData.identity" class="form-control h50">
+                    <input type="text" name="identity" ng-model="formData.particular" class="form-control h50" required>
                     <!--<div class="error-msg" ng-if="brandForm.identity.$invalid && brandForm.identity.$touched">Please Enter Something You Love</div>-->
                 </div>
             </div>
@@ -842,19 +918,20 @@
 
         <div class="button-center text-center">
             <div class="form-group text-center mt25 ">
-                <button class="btn btn-primary butn btn-lg sub-btn"><span>Clear</span></button>
+                <button class="btn btn-primary butn btn-lg sub-btn" type="reset" value="Reset"><span>Clear</span></button>
 
 
             </div>
 
             <div class="form-group text-center mt25 ">
-                <button class="btn btn-primary butn btn-lg sub-btn submit" type="submit"><span>Submit</span></button>
+                <button class="btn btn-primary butn btn-lg sub-btn submit" type="submit" ng-disabled="webForm.$invalid"><span>Submit</span></button>
 
 
             </div>
         </div>
     </form>
-    <div class="submit-thank" ng-if="formComplete">
-        <p class="text-center">Thank You</p>
-    </div>
+
+</div>
+<div class="submit-thank" ng-if="formComplete">
+    <h3 class="text-center">Thank You</p>
 </div>

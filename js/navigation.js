@@ -1,4 +1,5 @@
-var adminURL = "";
+var adminurl = "http://yfl.wohlig.co.in/api/";
+
 if (isproduction) {
     adminURL = "http://www.wohlig.co.in/demo/index.php";
 } else {
@@ -7,7 +8,7 @@ if (isproduction) {
 
 var navigationservice = angular.module('navigationservice', [])
 
-.factory('NavigationService', function() {
+.factory('NavigationService', function($http) {
     var navigation = [{
         name: "Home",
         classis: "active",
@@ -37,6 +38,22 @@ var navigationservice = angular.module('navigationservice', [])
                 }
             }
             return menuname;
+        },
+        websiteReq: function(formData, callback) {
+
+            $http({
+                url: adminurl + 'website/save',
+                method: 'POST',
+                data: formData
+            }).success(callback);
+        },
+        brandingBrief: function(formData, callback) {
+
+            $http({
+                url: adminurl + 'branding/save',
+                method: 'POST',
+                data: formData
+            }).success(callback);
         },
 
     };

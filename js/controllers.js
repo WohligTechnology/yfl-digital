@@ -61,19 +61,100 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.formData.brandLogosArr = [];
         $scope.formData.finishingUpArr = [];
         $scope.formData.brandFontsArr = [];
+        $scope.formData.accomplish = '';
+        $scope.formData.characteristics = '';
+        $scope.formData.interactionBrand = '';
+        $scope.formData.logoType = '';
+        $scope.formData.brandFont = '';
+        $scope.formData.brandIdentity = '';
+
         $scope.submitBrandForm = function(formData) {
 
-          console.log("formData".formData);
+            if ($scope.formData.elaborate != '') {
+                $scope.brandBreifFunction($scope.formData.elaborate);
+            }
+
+
             if ($scope.formData.brandBriefArr.length > 0) {
+                $scope.selectaccomplish = false;
                 _.each($scope.formData.brandBriefArr, function(n) {
-                    $scope.formData.brandBrief += n + ",";
+                    $scope.formData.accomplish += n + ",";
                 });
+            }
+            else {
+                $scope.selectaccomplish = true;
             };
+            if ($scope.formData.interacting.myother != '') {
+                $scope.brandChracteristics($scope.formData.interacting.myother);
+            };
+
+            if ($scope.formData.personalityBrandArr.length > 0) {
+                $scope.selectcharacteristics = false;
+                _.each($scope.formData.personalityBrandArr, function(n) {
+                    $scope.formData.characteristics += n + ",";
+                });
+            }
+            else {
+                $scope.selectcharacteristics = true
+            };
+
+            if ($scope.formData.customerResArr.length > 0) {
+                $scope.selectinteractionBrand = false;
+                _.each($scope.formData.customerResArr, function(n) {
+                    $scope.formData.interactionBrand += n + ",";
+                });
+            }
+            else {
+                $scope.selectinteractionBrand = true;
+            };
+
+            if ($scope.formData.brandLogosArr.length > 0) {
+                $scope.selectbrandLogo = false;
+                _.each($scope.formData.brandLogosArr, function(n) {
+                    $scope.formData.logoType += n + ",";
+                });
+            }
+             else {
+                $scope.selectbrandLogo = true;
+            };
+            if ($scope.formData.brandFontsArr.length > 0) {
+                $scope.selectbrandFont = false;
+                _.each($scope.formData.brandFontsArr, function(n) {
+                    $scope.formData.brandFont += n + ",";
+                });
+            }
+            else {
+                $scope.selectbrandFont = true;
+            };
+
+            if ($scope.formData.intention.myother != '') {
+                $scope.finishingUp($scope.formData.intention.myother);
+            }
+
+            if ($scope.formData.finishingUpArr.length > 0) {
+                $scope.selectbrandIdentity = false;
+                _.each($scope.formData.finishingUpArr, function(n) {
+                    $scope.formData.brandIdentity += n + ",";
+                });
+            }
+             else {
+                $scope.selectbrandIdentity = true;
+            }
+
+
+if (formData) {
+  console.log("formData",formData);
+  NavigationService.brandingBrief(formData,function(data){
+    console.log("data",data);
+  })
+}
+
+
         }
 
 
 
-        $scope.brandBreifFunction = function(val, index) {
+        $scope.brandBreifFunction = function(val) {
             var foundIndex = _.findIndex($scope.formData.brandBriefArr, function(key) {
                 return key == val;
             });
@@ -116,7 +197,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 $scope.formData.brandLogosArr.push(val);
 
             } else {
-                $scope.formData.brandLogosArr.splice(foundIndex,1);
+                $scope.formData.brandLogosArr.splice(foundIndex, 1);
             }
             console.log($scope.formData.brandLogosArr);
         };
@@ -128,20 +209,20 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             if (foundIndex == -1) {
                 $scope.formData.finishingUpArr.push(val);
             } else {
-                $scope.formData.finishingUpArr.splice(foundIndex,1);
+                $scope.formData.finishingUpArr.splice(foundIndex, 1);
             }
             console.log($scope.formData.finishingUpArr);
         };
-        $scope.brandFont=function(val){
-          var foundIndex =_.findIndex($scope.formData.brandFontsArr,function(key){
-            return key == val ;
-          });
-          if (foundIndex == -1) {
-            $scope.formData.brandFontsArr.push(val)
-          }else {
-            $scope.formData.brandFontsArr.splice(foundIndex,1);
-          };
-          console.log($scope.formData.brandFontsArr);
+        $scope.brandFont = function(val) {
+            var foundIndex = _.findIndex($scope.formData.brandFontsArr, function(key) {
+                return key == val;
+            });
+            if (foundIndex == -1) {
+                $scope.formData.brandFontsArr.push(val)
+            } else {
+                $scope.formData.brandFontsArr.splice(foundIndex, 1);
+            };
+            console.log($scope.formData.brandFontsArr);
         }
 
     })
@@ -162,68 +243,115 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         }
         $scope.textboxVal = false;
         $scope.showTextbox = function(value) {
-                $scope.textboxVal = value == "y";
-            }
-          $scope.formData={};
-          $scope.formData.requirementsArr=[];
-          $scope.formData.websiteFeaturesArr=[];
-          $scope.formData.contentTypeArr=[];
-          $scope.submitWebForm =function(formData){
-            console.log("formData",formData);
-            if (formData.format.myother!='') {
-                $scope.contentType(formData.format.myother);
+            $scope.textboxVal = value == "y";
+        }
+        $scope.formData = {};
+        $scope.formData.requirementsArr = [];
+        $scope.formData.websiteFeaturesArr = [];
+        $scope.formData.contentTypeArr = [];
+        $scope.formData.contentType = ''
+        $scope.formData.requirements = '';
+        $scope.formData.websiteFeatures = '';
+        $scope.submitWebForm = function(formData) {
 
+            if ($scope.formData.format.myothercontent != '' && $scope.formData.format.myothercontent) {
+                $scope.contentType(formData.format.myothercontent);
+            }
+            if ($scope.formData.contentTypeArr.length > 0) {
+                $scope.selectContentType = false;
                 _.each($scope.formData.contentTypeArr, function(n) {
                     $scope.formData.contentType += n + ",";
                 });
 
 
+            } else {
+                $scope.selectContentType = true;
             }
-            if (formData.features.myotherFeature!='') {
-                $scope.websiteFeatures(formData.features.myotherFeature);
+            if ($scope.formData.requirement.myother != '' && $scope.formData.requirement.myother) {
+                $scope.webAppRequirements($scope.formData.requirement.myother);
+            }
 
+            if ($scope.formData.requirementsArr.length > 0) {
+                $scope.selectrequirements = false;
+                _.each($scope.formData.requirementsArr, function(n) {
+                    $scope.formData.requirements += n + ",";
+                });
+            } else {
+                $scope.selectrequirements = true;
+            }
+            if ($scope.formData.features.myotherFeature != '' && $scope.formData.features.myotherFeature) {
+                $scope.websiteFeatures($scope.formData.features.myotherFeature);
+            }
+
+            if ($scope.formData.websiteFeaturesArr.length > 0) {
+                $scope.selectwebsiteFeatures = false;
                 _.each($scope.formData.websiteFeaturesArr, function(n) {
-                    $scope.formData.websiteFeature += n + ",";
+                    $scope.formData.websiteFeatures += n + ",";
                 });
 
-
+            } else {
+                $scope.selectwebsiteFeatures = true;
             }
-          }
-          $scope.webAppRequirements=function(val){
-            var foundIndex = _.findIndex($scope.formData.requirementsArr,function(key){
-              return key == val;
+
+
+            console.log("formData", formData);
+            NavigationService.websiteReq(formData, function(data) {
+                console.log("formData", formData);
+                console.log("data", data);
+                if (data.value === true) {
+                    $scope.formComplete = true
+                    $timeout(function() {
+                        $scope.formComplete = false;
+                        $scope.formData = {};
+                        $scope.formData.requirementsArr = [];
+                        $scope.formData.websiteFeaturesArr = [];
+                        $scope.formData.contentTypeArr = [];
+                        $scope.formData.contentType = ''
+                        $scope.formData.requirements = '';
+                        $scope.formData.websiteFeatures = '';
+
+
+                    }, 2000);
+                }
+            })
+
+
+        }
+        $scope.webAppRequirements = function(val) {
+            var foundIndex = _.findIndex($scope.formData.requirementsArr, function(key) {
+                return key == val;
             });
             if (foundIndex == -1) {
-              $scope.formData.requirementsArr.push(val);
-            }else {
-              $scope.formData.requirementsArr.splice(foundIndex,1);
+                $scope.formData.requirementsArr.push(val);
+            } else {
+                $scope.formData.requirementsArr.splice(foundIndex, 1);
             };
             console.log($scope.formData.requirementsArr);
-          };
-          $scope.websiteFeatures=function(val){
-            var foundIndex = _.findIndex($scope.formData.websiteFeaturesArr, function(key){
-              return key == val ;
+        };
+        $scope.websiteFeatures = function(val) {
+            var foundIndex = _.findIndex($scope.formData.websiteFeaturesArr, function(key) {
+                return key == val;
             });
             if (foundIndex == -1) {
-              $scope.formData.websiteFeaturesArr.push(val);
-            }else {
-              $scope.formData.websiteFeaturesArr.splice(foundIndex,1);
+                $scope.formData.websiteFeaturesArr.push(val);
+            } else {
+                $scope.formData.websiteFeaturesArr.splice(foundIndex, 1);
 
             };
             console.log($scope.formData.websiteFeaturesArr);
-          }
-          $scope.contentType=function(val){
-            var foundIndex = _.findIndex($scope.formData.contentTypeArr, function(key){
-              return key == val ;
+        }
+        $scope.contentType = function(val) {
+            var foundIndex = _.findIndex($scope.formData.contentTypeArr, function(key) {
+                return key == val;
             });
             if (foundIndex == -1) {
-              $scope.formData.contentTypeArr.push(val);
-            }else {
-              $scope.formData.contentTypeArr.splice(foundIndex,1);
+                $scope.formData.contentTypeArr.push(val);
+            } else {
+                $scope.formData.contentTypeArr.splice(foundIndex, 1);
 
             };
             console.log($scope.formData.contentTypeArr);
-          }
+        }
     })
 
 .controller('headerctrl', function($scope, TemplateService) {
