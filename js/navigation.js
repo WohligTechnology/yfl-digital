@@ -1,4 +1,5 @@
 var adminurl = "http://yfl.wohlig.co.in/api/";
+// var adminurl = "http://192.168.2.12/api/";
 
 if (isproduction) {
     adminURL = "http://www.wohlig.co.in/demo/index.php";
@@ -47,7 +48,7 @@ var navigationservice = angular.module('navigationservice', [])
                 data: formData
             }).success(callback);
         },
-        brandingBrief: function(formData, callback) {
+        saveBrandingBrief: function(formData, callback) {
 
             $http({
                 url: adminurl + 'branding/save',

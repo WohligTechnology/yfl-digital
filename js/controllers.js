@@ -55,99 +55,139 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             // }
 
         $scope.formData = {};
+        $scope.formComplete = false;
         $scope.formData.brandBriefArr = [];
         $scope.formData.personalityBrandArr = [];
         $scope.formData.customerResArr = [];
         $scope.formData.brandLogosArr = [];
         $scope.formData.finishingUpArr = [];
         $scope.formData.brandFontsArr = [];
-        $scope.formData.accomplish = '';
-        $scope.formData.characteristics = '';
-        $scope.formData.interactionBrand = '';
-        $scope.formData.logoType = '';
-        $scope.formData.brandFont = '';
-        $scope.formData.brandIdentity = '';
+
+        $scope.selectaccomplish = false;
+        $scope.selectcharacteristics = false;
+
 
         $scope.submitBrandForm = function(formData) {
 
-            if ($scope.formData.elaborate != '') {
-                $scope.brandBreifFunction($scope.formData.elaborate);
+            if (formData.elaboratemodel != '' && formData.elaboratemodel) {
+                $scope.brandBreifFunction(formData.elaboratemodel);
+                if ($scope.formData.brandBriefArr.length > 0) {
+                    $scope.selectaccomplish = false;
+                    $scope.formData.accomplish = "";
+
+                    _.each($scope.formData.brandBriefArr, function(n) {
+                        console.log('n', n);
+
+
+                        $scope.formData.accomplish += n + ",";
+                    });
+
+                    $scope.formData.accomplish = $scope.formData.accomplish.substring(0, ($scope.formData.accomplish.length - 1));
+
+
+                } else {
+
+                    $scope.selectaccomplish = true;
+                }
+
             }
 
 
-            if ($scope.formData.brandBriefArr.length > 0) {
-                $scope.selectaccomplish = false;
-                _.each($scope.formData.brandBriefArr, function(n) {
-                    $scope.formData.accomplish += n + ",";
-                });
-            }
-            else {
-                $scope.selectaccomplish = true;
-            };
-            if ($scope.formData.interacting.myother != '') {
-                $scope.brandChracteristics($scope.formData.interacting.myother);
-            };
+
+
 
             if ($scope.formData.personalityBrandArr.length > 0) {
                 $scope.selectcharacteristics = false;
+                $scope.formData.characteristics = "";
                 _.each($scope.formData.personalityBrandArr, function(n) {
                     $scope.formData.characteristics += n + ",";
                 });
-            }
-            else {
+                  $scope.formData.characteristics = $scope.formData.characteristics.substring(0, ($scope.formData.characteristics.length - 1));
+            } else {
                 $scope.selectcharacteristics = true
             };
-
-            if ($scope.formData.customerResArr.length > 0) {
-                $scope.selectinteractionBrand = false;
-                _.each($scope.formData.customerResArr, function(n) {
-                    $scope.formData.interactionBrand += n + ",";
-                });
+            if (formData.model != '' && formData.model) {
+                $scope.customerRes(formData.model);
+                if ($scope.formData.customerResArr.length > 0) {
+                    $scope.selectinteractionBrand = false;
+                    $scope.formData.interactionBrand = " ";
+                    _.each($scope.formData.customerResArr, function(n) {
+                        $scope.formData.interactionBrand += n + ",";
+                    });
+                      $scope.formData.interactionBrand = $scope.formData.interactionBrand.substring(0, ($scope.formData.interactionBrand.length - 1));
+                } else {
+                    $scope.selectinteractionBrand = true;
+                };
             }
-            else {
-                $scope.selectinteractionBrand = true;
-            };
+
+
 
             if ($scope.formData.brandLogosArr.length > 0) {
                 $scope.selectbrandLogo = false;
+                $scope.formData.logoType = "";
                 _.each($scope.formData.brandLogosArr, function(n) {
                     $scope.formData.logoType += n + ",";
                 });
-            }
-             else {
+                  $scope.formData.logoType = $scope.formData.logoType.substring(0, ($scope.formData.logoType.length - 1));
+            } else {
                 $scope.selectbrandLogo = true;
             };
             if ($scope.formData.brandFontsArr.length > 0) {
                 $scope.selectbrandFont = false;
+                $scope.formData.brandFont = ""
                 _.each($scope.formData.brandFontsArr, function(n) {
                     $scope.formData.brandFont += n + ",";
                 });
-            }
-            else {
+                  $scope.formData.brandFont = $scope.formData.brandFont.substring(0, ($scope.formData.brandFont.length - 1));
+            } else {
                 $scope.selectbrandFont = true;
             };
 
-            if ($scope.formData.intention.myother != '') {
-                $scope.finishingUp($scope.formData.intention.myother);
+
+            if (formData.models != '' && formData.models) {
+                $scope.finishingUp(formData.models);
+                if ($scope.formData.finishingUpArr.length > 0) {
+                    $scope.selectbrandIdentity = false;
+                    $scope.formData.brandIdentity = "";
+                    _.each($scope.formData.finishingUpArr, function(n) {
+                        $scope.formData.brandIdentity += n + ",";
+                    });
+                      $scope.formData.brandIdentity = $scope.formData.brandIdentity.substring(0, ($scope.formData.brandIdentity.length - 1));
+                } else {
+                    $scope.selectbrandIdentity = true;
+                };
             }
 
-            if ($scope.formData.finishingUpArr.length > 0) {
-                $scope.selectbrandIdentity = false;
-                _.each($scope.formData.finishingUpArr, function(n) {
-                    $scope.formData.brandIdentity += n + ",";
+
+
+            if ($scope.formData.brandBriefArr.length > 0 && $scope.formData.personalityBrandArr.length > 0 && $scope.formData.customerResArr.length > 0 && $scope.formData.brandLogosArr.length > 0 && $scope.formData.brandFontsArr.length > 0 && $scope.formData.finishingUpArr.length > 0) {
+                NavigationService.saveBrandingBrief(formData, function(data) {
+                    console.log("formData", formData);
+                    console.log("data", data);
+                    if (data.value === true) {
+                        $scope.formComplete = true
+                        $timeout(function() {
+                            $scope.formComplete = false;
+                            $scope.formData = {};
+                            $scope.formData.brandBriefArr = [];
+                            $scope.formData.personalityBrandArr = [];
+                            $scope.formData.customerResArr = [];
+                            $scope.formData.brandLogosArr = [];
+                            $scope.formData.finishingUpArr = [];
+                            $scope.formData.brandFontsArr = [];
+                            $scope.formData.accomplish = "";
+                            $scope.formData.characteristics = "";
+                            $scope.formData.interactionBrand = "";
+                            $scope.formData.logoType = "";
+                            $scope.formData.brandFont = "";
+                            $scope.formData.brandIdentity = "";
+
+                        }, 2000);
+                    }
                 });
-            }
-             else {
-                $scope.selectbrandIdentity = true;
+
             }
 
-
-if (formData) {
-  console.log("formData",formData);
-  NavigationService.brandingBrief(formData,function(data){
-    console.log("data",data);
-  })
-}
 
 
         }
@@ -156,9 +196,9 @@ if (formData) {
 
         $scope.brandBreifFunction = function(val) {
             var foundIndex = _.findIndex($scope.formData.brandBriefArr, function(key) {
-                return key == val;
+                return key === val;
             });
-            if (foundIndex == -1) {
+            if (foundIndex === -1) {
                 $scope.formData.brandBriefArr.push(val);
             } else {
                 $scope.formData.brandBriefArr.splice(foundIndex, 1);
@@ -167,9 +207,9 @@ if (formData) {
         };
         $scope.brandChracteristics = function(val) {
             var foundIndex = _.findIndex($scope.formData.personalityBrandArr, function(key) {
-                return key == val;
+                return key === val;
             })
-            if (foundIndex == -1) {
+            if (foundIndex === -1) {
                 $scope.formData.personalityBrandArr.push(val);
             } else {
                 $scope.formData.personalityBrandArr.splice(foundIndex, 1);
@@ -179,9 +219,9 @@ if (formData) {
         $scope.customerRes = function(val) {
 
             var foundIndex = _.findIndex($scope.formData.customerResArr, function(key) {
-                return key == val;
+                return key === val;
             });
-            if (foundIndex == -1) {
+            if (foundIndex === -1) {
                 $scope.formData.customerResArr.push(val);
             } else {
                 $scope.formData.customerResArr.splice(foundIndex, 1);
@@ -191,7 +231,7 @@ if (formData) {
         };
         $scope.brandLogo = function(val) {
             var foundIndex = _.findIndex($scope.formData.brandLogosArr, function(key) {
-                return key == val;
+                return key === val;
             });
             if (foundIndex == -1) {
                 $scope.formData.brandLogosArr.push(val);
@@ -204,7 +244,7 @@ if (formData) {
         $scope.finishingUp = function(val) {
             console.log(val);
             var foundIndex = _.findIndex($scope.formData.finishingUpArr, function(key) {
-                return key == val;
+                return key === val;
             });
             if (foundIndex == -1) {
                 $scope.formData.finishingUpArr.push(val);
@@ -254,66 +294,74 @@ if (formData) {
         $scope.formData.websiteFeatures = '';
         $scope.submitWebForm = function(formData) {
 
-            if ($scope.formData.format.myothercontent != '' && $scope.formData.format.myothercontent) {
+            if (formData.format.myothercontent != '' && formData.format.myothercontent) {
                 $scope.contentType(formData.format.myothercontent);
             }
             if ($scope.formData.contentTypeArr.length > 0) {
                 $scope.selectContentType = false;
+                $scope.formData.contentType = " ";
                 _.each($scope.formData.contentTypeArr, function(n) {
                     $scope.formData.contentType += n + ",";
                 });
+                $scope.formData.contentType = $scope.formData.contentType.substring(0, ($scope.formData.contentType.length - 1));
 
 
             } else {
                 $scope.selectContentType = true;
             }
-            if ($scope.formData.requirement.myother != '' && $scope.formData.requirement.myother) {
+            if (formData.requirement.myother != '' && formData.requirement.myother) {
                 $scope.webAppRequirements($scope.formData.requirement.myother);
             }
 
             if ($scope.formData.requirementsArr.length > 0) {
                 $scope.selectrequirements = false;
+                $scope.formData.requirements="";
                 _.each($scope.formData.requirementsArr, function(n) {
                     $scope.formData.requirements += n + ",";
                 });
+                  $scope.formData.requirements = $scope.formData.requirements.substring(0, ($scope.formData.requirements.length - 1));
             } else {
                 $scope.selectrequirements = true;
             }
-            if ($scope.formData.features.myotherFeature != '' && $scope.formData.features.myotherFeature) {
+            if (formData.features.myotherFeature != '' && formData.features.myotherFeature) {
                 $scope.websiteFeatures($scope.formData.features.myotherFeature);
             }
 
             if ($scope.formData.websiteFeaturesArr.length > 0) {
                 $scope.selectwebsiteFeatures = false;
+                $scope.formData.websiteFeatures="";
                 _.each($scope.formData.websiteFeaturesArr, function(n) {
                     $scope.formData.websiteFeatures += n + ",";
                 });
+                  $scope.formData.websiteFeatures = $scope.formData.websiteFeatures.substring(0, ($scope.formData.websiteFeatures.length - 1));
 
             } else {
                 $scope.selectwebsiteFeatures = true;
             }
 
 
-            console.log("formData", formData);
-            NavigationService.websiteReq(formData, function(data) {
-                console.log("formData", formData);
-                console.log("data", data);
-                if (data.value === true) {
-                    $scope.formComplete = true
-                    $timeout(function() {
-                        $scope.formComplete = false;
-                        $scope.formData = {};
-                        $scope.formData.requirementsArr = [];
-                        $scope.formData.websiteFeaturesArr = [];
-                        $scope.formData.contentTypeArr = [];
-                        $scope.formData.contentType = ''
-                        $scope.formData.requirements = '';
-                        $scope.formData.websiteFeatures = '';
+            if ($scope.formData.contentTypeArr.length > 0 && $scope.formData.requirementsArr.length > 0 && $scope.formData.websiteFeaturesArr.length > 0 ) {
+              NavigationService.websiteReq(formData, function(data) {
+                  console.log("formData", formData);
+                  console.log("data", data);
+                  if (data.value === true) {
+                      $scope.formComplete = true
+                      $timeout(function() {
+                          $scope.formComplete = false;
+                          $scope.formData = {};
+                          $scope.formData.requirementsArr = [];
+                          $scope.formData.websiteFeaturesArr = [];
+                          $scope.formData.contentTypeArr = [];
+                          $scope.formData.contentType = "";
+                          $scope.formData.requirements = "";
+                          $scope.formData.websiteFeatures = "";
 
 
-                    }, 2000);
-                }
-            })
+                      }, 2000);
+                  }
+              })
+            }
+
 
 
         }
