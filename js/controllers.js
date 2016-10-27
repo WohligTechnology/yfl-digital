@@ -71,32 +71,21 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
             if (formData.elaboratemodel != '' && formData.elaboratemodel) {
                 $scope.brandBreifFunction(formData.elaboratemodel);
+              }
                 if ($scope.formData.brandBriefArr.length > 0) {
                     $scope.selectaccomplish = false;
                     $scope.formData.accomplish = "";
-
                     _.each($scope.formData.brandBriefArr, function(n) {
-                        console.log('n', n);
-
-
                         $scope.formData.accomplish += n + ",";
                     });
-
                     $scope.formData.accomplish = $scope.formData.accomplish.substring(0, ($scope.formData.accomplish.length - 1));
-
-
-                } else {
+                  } else {
 
                     $scope.selectaccomplish = true;
                 }
 
-            }
 
-
-
-
-
-            if ($scope.formData.personalityBrandArr.length > 0) {
+              if ($scope.formData.personalityBrandArr.length > 0) {
                 $scope.selectcharacteristics = false;
                 $scope.formData.characteristics = "";
                 _.each($scope.formData.personalityBrandArr, function(n) {
@@ -108,6 +97,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             };
             if (formData.model != '' && formData.model) {
                 $scope.customerRes(formData.model);
+              }
                 if ($scope.formData.customerResArr.length > 0) {
                     $scope.selectinteractionBrand = false;
                     $scope.formData.interactionBrand = " ";
@@ -118,7 +108,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 } else {
                     $scope.selectinteractionBrand = true;
                 };
-            }
+
 
 
 
@@ -146,6 +136,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
             if (formData.models != '' && formData.models) {
                 $scope.finishingUp(formData.models);
+              }
                 if ($scope.formData.finishingUpArr.length > 0) {
                     $scope.selectbrandIdentity = false;
                     $scope.formData.brandIdentity = "";
@@ -156,7 +147,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 } else {
                     $scope.selectbrandIdentity = true;
                 };
-            }
+
 
 
 
@@ -289,11 +280,13 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.formData.requirementsArr = [];
         $scope.formData.websiteFeaturesArr = [];
         $scope.formData.contentTypeArr = [];
-      
+
         $scope.submitWebForm = function(formData) {
+
 
             if (formData.myothercontent != '' && formData.myothercontent) {
                 $scope.contentType(formData.myothercontent);
+              }
                 if ($scope.formData.contentTypeArr.length > 0) {
                     $scope.selectContentType = false;
                     $scope.formData.contentType = " ";
@@ -306,7 +299,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 } else {
                     $scope.selectContentType = true;
                 }
-            }
+
 
             if (formData.requirement.myother != '' && formData.requirement.myother) {
                 $scope.webAppRequirements(formData.requirement.myother);
