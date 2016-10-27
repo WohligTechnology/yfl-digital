@@ -289,28 +289,27 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.formData.requirementsArr = [];
         $scope.formData.websiteFeaturesArr = [];
         $scope.formData.contentTypeArr = [];
-        $scope.formData.contentType = ''
-        $scope.formData.requirements = '';
-        $scope.formData.websiteFeatures = '';
+      
         $scope.submitWebForm = function(formData) {
 
-            if (formData.format.myothercontent != '' && formData.format.myothercontent) {
-                $scope.contentType(formData.format.myothercontent);
-            }
-            if ($scope.formData.contentTypeArr.length > 0) {
-                $scope.selectContentType = false;
-                $scope.formData.contentType = " ";
-                _.each($scope.formData.contentTypeArr, function(n) {
-                    $scope.formData.contentType += n + ",";
-                });
-                $scope.formData.contentType = $scope.formData.contentType.substring(0, ($scope.formData.contentType.length - 1));
+            if (formData.myothercontent != '' && formData.myothercontent) {
+                $scope.contentType(formData.myothercontent);
+                if ($scope.formData.contentTypeArr.length > 0) {
+                    $scope.selectContentType = false;
+                    $scope.formData.contentType = " ";
+                    _.each($scope.formData.contentTypeArr, function(n) {
+                        $scope.formData.contentType += n + ",";
+                    });
+                    $scope.formData.contentType = $scope.formData.contentType.substring(0, ($scope.formData.contentType.length - 1));
 
 
-            } else {
-                $scope.selectContentType = true;
+                } else {
+                    $scope.selectContentType = true;
+                }
             }
+
             if (formData.requirement.myother != '' && formData.requirement.myother) {
-                $scope.webAppRequirements($scope.formData.requirement.myother);
+                $scope.webAppRequirements(formData.requirement.myother);
             }
 
             if ($scope.formData.requirementsArr.length > 0) {
@@ -324,7 +323,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 $scope.selectrequirements = true;
             }
             if (formData.features.myotherFeature != '' && formData.features.myotherFeature) {
-                $scope.websiteFeatures($scope.formData.features.myotherFeature);
+                $scope.websiteFeatures(formData.features.myotherFeature);
             }
 
             if ($scope.formData.websiteFeaturesArr.length > 0) {
