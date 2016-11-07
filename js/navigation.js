@@ -1,4 +1,4 @@
-var adminurl = "http://yfl.wohlig.co.in/api/";
+var adminurl = "http://104.154.81.148:81/api/";
 // var adminurl = "http://192.168.2.12/api/";
 
 if (isproduction) {
